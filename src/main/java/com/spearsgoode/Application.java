@@ -1,13 +1,13 @@
-package com.spearsgoode.site;
+package com.spearsgoode;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpearsGoodeWebsiteApplication {
+public class Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpearsGoodeWebsiteApplication.class, args);
+		SpringApplication.run(Application.class, args);
 	}
 
 }
