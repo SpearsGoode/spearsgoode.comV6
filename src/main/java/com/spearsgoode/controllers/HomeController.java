@@ -10,7 +10,7 @@ public class HomeController {
     @GetMapping("/")
     public String home(Model model) {
         // Add model attributes
-        model.addAttribute("message", "Welcome to the homepage!");
+        model.addAttribute("message", "Welcome to the homepage!");  //FIXME
 
         // Return the view name
         return "home";
