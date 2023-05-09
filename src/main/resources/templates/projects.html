@@ -4,31 +4,64 @@
 <head>
   <meta name="description" content="Project Portfolio for some of the more important projects I've worked on.">
   <title>SpearsGoode.com - Project Portfolio</title>
-<!--          v    Make this into a template  v -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta charset="utf-8">
-<!--  <link rel="shortcut icon" type="image/svg" href="./img/SGlogoV2.svg">   FIXME -->
-<!--   <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet"> FIXME remove? -->
-<!--  <link href="./css/main.min.css" type="text/css" rel="stylesheet">       FIXME -->
-<!--  <link href="./node_modules/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet"/>   FIXME -->
-<!--           ^   Make this into a template   ^ -->
+  <span th:include="include :: header"></span> <!--  FIXME include is depreciate, replace with insert-->
 </head>
 
-<body>
+<body class="container-fluid justify-content-center bg-dark">
 
-<!-- FIXME NAVIGATION -->
+  <div class="bg-light">
+    <h1>Welcome to the projects page!</h1>
+  </div>
 
-<!-- FIXME PROJECT CARDS -->
 
-<!-- FIXME PROJECT MODALS -->
+<!--          v    FIXME Make this into a template  v -->
+  <!-- NAVIGATION -->
+  <nav class="navbar navbar-dark bg-dark sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img th:src="@{/img/SGlogoV2.svg}" alt="Spears Goode Logo" width="50" height="50">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel"></h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column">
+          <ul class="navbar-nav nav-fill pe-3">
 
-<!-- FIXME CONTACT FORM-->
+<!--            <?php-->
+<!--                foreach ($projectData as $proj) {-->
+<!--                  echo "<li class=\"nav-item\">";-->
+<!--            echo "<a class=\"nav-link\" aria-current=\"page\" href=\"#" . $proj['title'] . "\">" . $proj['title'] . "</a>";-->
+<!--            echo "</li>";-->
+<!--            }-->
+<!--            ?>  FIXME replace with java loop. must create database entries first-->
 
-<footer>
-  <span class="text-light">&copy; Spears Goode</span>
-</footer>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+          <img th:src="@{/img/SGlogoV2.svg}" alt="Spears Goode Logo" class="img-fluid m-auto">
+        </div>
+      </div>
+    </div>
+  </nav>
+<!--           ^   FIXME Make this into a template   ^ -->
 
-<!--<script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>  FIXME -->
+  <!-- FIXME PROJECT CARDS -->
+
+  <!-- FIXME PROJECT MODALS -->
+
+  <!-- FIXME CONTACT FORM-->
+
+  <footer>
+    <span class="text-light">&copy; Spears Goode</span>
+  </footer>
+
+  <span th:include="include :: js"></span> <!--  FIXME include is depreciate, replace with insert-->
 </body>
 
 </html>
