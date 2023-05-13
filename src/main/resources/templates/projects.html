@@ -4,7 +4,12 @@
 <head>
   <meta name="description" content="Project Portfolio for some of the more important projects I've worked on.">
   <title>SpearsGoode.com - Project Portfolio</title>
-  <span th:include="include :: header"></span> <!--  FIXME include is depreciate, replace with insert-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <link rel="shortcut icon" type="image/svg" th:href="@{/img/SGlogoV2.svg}">
+  <!--  <link th:href="@{/node_modules/bootstrap/dist/css/bootstrap.min.css}" type="text/css" rel="stylesheet"> FIXME remove?-->
+  <link th:href="@{/css/main.min.css}" type="text/css" rel="stylesheet">
+  <link th:href="@{/node_modules/bootstrap-icons/font/bootstrap-icons.css}" rel="stylesheet"/>
 </head>
 
 <body class="container-fluid justify-content-center bg-dark">
@@ -61,7 +66,7 @@
     <span class="text-light">&copy; Spears Goode</span>
   </footer>
 
-  <span th:include="include :: js"></span> <!--  FIXME include is depreciate, replace with insert-->
+  <span th:replace="~{fragments/commonFragments :: js}"></span> <!--  FIXME include is depreciate, replace with insert-->
 </body>
 
 </html>
