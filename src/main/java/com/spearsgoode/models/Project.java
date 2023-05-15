@@ -1,6 +1,15 @@
 package com.spearsgoode.models;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class Project {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
     private String title;   // Title of Project
     private String tag;     // Simple & Unique Tag (Used for src, id, etc)
     private String date;    // Date Completed
@@ -10,20 +19,12 @@ public class Project {
     private String intro;   // Into Text for Project
     private String info;    // Content for Project Modal
 
-    public Project(String title, String tag, String date, String img, String alt, String link, String intro, String info) {
-        this.title = title;
-        this.tag = tag;
-        this.date = date;
-        this.img = img;
-        this.alt = alt;
-        this.link = link;
-        this.intro = intro;
-        this.info = info;
-    }
-
     /* ----------
         GETTERS
      */
+    public Integer getId() {
+        return id;
+    }
     public String getTitle() {
         return title;
     }
@@ -59,6 +60,9 @@ public class Project {
     /* ----------
         SETTERS
      */
+    public void setId(Integer id) {
+        this.id = id;
+    }
     public void setTitle(String title) {
         this.title = title;
     }
