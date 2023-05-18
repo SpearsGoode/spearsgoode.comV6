@@ -35,20 +35,20 @@
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body d-flex flex-column">
+
+          <!--            TEST-->
           <ul class="navbar-nav nav-fill pe-3">
-
-<!--            <?php-->
-<!--                foreach ($projectData as $proj) {-->
-<!--                  echo "<li class=\"nav-item\">";-->
-<!--            echo "<a class=\"nav-link\" aria-current=\"page\" href=\"#" . $proj['title'] . "\">" . $proj['title'] . "</a>";-->
-<!--            echo "</li>";-->
-<!--            }-->
-<!--            ?>  FIXME replace with java loop. must create database entries first-->
-
+            <div th:each="project : ${projects}">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" th:href="'#' + ${project.title}" th:text="${project.title}"></a>
+              </li>
+            </div>
             <li class="nav-item">
               <a class="nav-link" href="#contact">Contact</a>
             </li>
           </ul>
+          <!--            TEST-->
+
           <img th:src="@{/img/SGlogoV2.svg}" alt="Spears Goode Logo" class="img-fluid m-auto">
         </div>
       </div>
@@ -66,7 +66,8 @@
     <span class="text-light">&copy; Spears Goode</span>
   </footer>
 
-  <span th:replace="~{fragments/commonFragments :: js}"></span> <!--  FIXME include is depreciate, replace with insert-->
+  <script th:src="@{/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js}"></script>
+<!--  <span th:replace="~{fragments/commonFragments :: js}"></span>-->
 </body>
 
 </html>
