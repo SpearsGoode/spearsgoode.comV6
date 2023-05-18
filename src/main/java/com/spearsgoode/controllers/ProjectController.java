@@ -4,6 +4,7 @@ import com.spearsgoode.interfaces.ProjectRepo;
 import com.spearsgoode.models.Project;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,9 +33,11 @@ public class ProjectController {
         return "Saved";
     }
 
-    @GetMapping(path="/all")
-    public @ResponseBody Iterable<Project> getAllProjects() {
-        return projectRepo.findAll();
+    @GetMapping
+    public String getAllProjects(Model model) {
+        Iterable<Project> projects = projectRepo.findAll();
+        model.addAttribute("projects", projects);
+        return "projects";
     }
 
 }
