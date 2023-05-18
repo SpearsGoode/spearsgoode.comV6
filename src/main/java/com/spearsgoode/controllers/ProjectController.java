@@ -71,4 +71,5 @@ refreshDB();
 COMMON NOTES:
     research CRUD in general
     decide: JSON or XML
+    research access control & spring.security to protect ability to modify projects
 */
