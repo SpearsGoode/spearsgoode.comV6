@@ -25,6 +25,7 @@ public class Project {
     public Integer getId() {
         return id;
     }
+
     public String getTitle() {
         return title;
     }
@@ -63,6 +64,7 @@ public class Project {
     public void setId(Integer id) {
         this.id = id;
     }
+
     public void setTitle(String title) {
         this.title = title;
     }

@@ -37,9 +37,39 @@ public class ProjectController {
         return projectRepo.findAll();
     }
 
-
-
-
-
-
 }
+
+/*
+Functionality Needed:
+    addProject
+    addToLocal
+    removeProject -- Research crudRepository
+    refreshDB
+    checkEmpty -- Research crudRepository
+
+addProject();
+    collect data from form
+    common sense checks
+    try: store data appropriately
+    if errors: cancel & print error message
+    create project object
+    addToLocal();
+    projectRepo.save(project);
+
+addToLocal();
+    NOTE:
+        takes project object
+        modifies local text file
+            JSON or XML
+
+refreshDB();
+    checkEmpty();
+    if yes add locally stored projects
+    if no: return 1
+
+
+COMMON NOTES:
+    research CRUD in general
+    decide: JSON or XML
+    research access control & spring.security to protect ability to modify projects
+*/
