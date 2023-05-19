@@ -62,7 +62,7 @@ addProject();
 addToLocal();
     NOTE:
         takes project object
-        modifies local text file
+        modifies local modal.html file
             JSON or XML
 
 refreshDB();
@@ -75,4 +75,8 @@ COMMON NOTES:
     research CRUD in general
     decide: JSON or XML
     research access control & spring.security to protect ability to modify projects
+
+TO DO
+    setup persistence
+    upload projects
 */

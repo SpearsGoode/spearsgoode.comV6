@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+
+    <div th:fragment="abstract">
+        <h5 class="display-6">Evolution</h5>
+        <p>Abstract-Artwork.com went through several stages before it became what it is today. In the very beginning, it severed no purpose other than to drive more traffic to SpearsGoode.com, which was primarily a portfolio of my artwork at the time.<p>
+        <h5 class="display-6">Adding More Content</h5>
+        <p>After a first draft, which was just a landing page. I thought that it would help fill up the site if I also hosted work by other artists. I started sending out messages, to find out if anyone would be interested; to my surprise, many people were interested. As a result, the featured artists, all artists, and submit art pages were born.<p>
+        <h5 class="display-6">Getting Help</h5>
+        <p>Once I became aware of the size of the project I had taken on, I realized that I may need some help. I did not receive the kind of help that I had hoped for. Instead, I received some much-needed suggestions. The most helpful of these being a stark reality check; It was completely contradictory to ask people to submit their art to a website meant to drive traffic to my art.<p>
+        <h5 class="display-6">Turning Point</h5>
+        <p>I promptly removed any link to my site other than the one in my section at the bottom of the all artists page. From then on, Abstract-Artwork.com's sole purpose was to build a community. Soon after, I added a forum in an attempt to get the artists engaging with one another. Unfortunately, I knew nothing about moderating or managing a forum.<p>
+        <h5 class="display-6">Challenges</h5>
+        <p>The first problem I encountered was that adding more artwork had to be done manually and was extremely time-consuming. I needed this to be easier so I could continue to work on other things. I began learning PHP so I could create dynamic pages and streamline the submission process. The next problem that arose was due to the forum. I visited it one day to find every page of the forum filled with spam links. Rather than sink more time into something no one used, I decided to completely remove it.<p>
+        <h5 class="display-6">Conclusion</h5>
+        <p>I continued to work on improving the site and adding more artwork for a while after overcoming these difficulties but in the end, It was still too time-consuming. The only way to overcome some of the core problems would be to start over using some sort of framework or CMS (content management system) so I wouldn't have to reinvent the wheel. I intend to do this someday at AbstractArt.work but for now, I'm focusing on other projects. Creating Abstract-Artwork.com was an amazing adventure; the knowledge and experience I gained has already proven itself invaluable.<p>
+    </div>
+
+    <div class="d-grid gap-2" th:fragment="aHODLm">
+        <p>The code for this indicator is not publicly available. However, I will include a few more examples.</p>
+
+        <h5 class="display-6"><abbr title="Bitcoin Liquid Index">BLX</abbr></h5>
+        <img th:src="@{/img/aHODLm-BLX.jpg}" alt="aHODLm BLX Example" class="img-fluid"></img>
+        <a th:href="@{/img/aHODLm-BLX.png}" class="btn btn-dark fs-6 p-2 mb-4" type="button" target="_blank">View Fullscreen</a>
+
+        <h5 class="display-6"><abbr title="Ethereum">ETH</abbr></h5>
+        <img th:src="@{/img/aHODLm-ETH.jpg}" alt="aHODLm ETH Example" class="img-fluid"></img>
+        <a th:href="@{/img/aHODLm-ETH.png}" class="btn btn-dark fs-6 p-2 mb-4" type="button" target="_blank">View Fullscreen</a>
+
+        <h5 class="display-6"><abbr title="Vanguard Total Stock Market Index">VTI</abbr></h5>
+        <img th:src="@{/img/aHODLm-VTI.jpg}" alt="aHODLm VTI Example" class="img-fluid"></img>
+        <a th:href="@{/img/aHODLm-VTI.png}" class="btn btn-dark fs-6 p-2 mb-4" type="button" target="_blank">View Fullscreen</a>
+
+        <h5 class="display-6"><abbr title="Dow Jones Industrial Average">DJI</abbr></h5>
+        <img th:src="@{/img/aHODLm-DJI.jpg}" alt="aHODLm DJI Example" class="img-fluid"></img>
+        <a th:href="@{/img/aHODLm-DJI.png}" class="btn btn-dark fs-6 p-2 mb-4" type="button" target="_blank">View Fullscreen</a>
+
+        <h5 class="display-6"><abbr title="S&P 500 Index">SPX</abbr></h5>
+        <img th:src="@{/img/aHODLm-SPX.jpg}" alt="aHODLm SPX Example" class="img-fluid"></img>
+        <a th:href="@{/img/aHODLm-SPX.png}" class="btn btn-dark fs-6 p-2 mb-4" type="button" target="_blank">View Fullscreen</a>
+
+        <h5 class="display-6"><abbr title="NASDAQ 100 Index">NDX</abbr></h5>
+        <img th:src="@{/img/aHODLm-NDX.jpg}" alt="aHODLm NDX Example" class="img-fluid"></img>
+        <a th:href="@{/img/aHODLm-NDX.png}" class="btn btn-dark fs-6 p-2 mb-4" type="button" target="_blank">View Fullscreen</a>
+
+        <h5 class="display-6"><abbr title="Russell 2000 Index">RUT</abbr></h5>
+        <img th:src="@{/img/aHODLm-RUT.jpg}" alt="aHODLm RUT Example" class="img-fluid"></img>
+        <a th:href="@{/img/aHODLm-RUT.png}" class="btn btn-dark fs-6 p-2 mb-4" type="button" target="_blank">View Fullscreen</a>
+    </div>
+
+    <div th:fragment="armada">
+        <div class="d-grid gap-2">
+            <a class="btn btn-dark mb-2" th:href="@{/pdf/ApeArmadaWP.pdf}" target="_blank">Open PDF</a>
+        </div>
+        <embed th:src="@{/pdf/ApeArmadaWP.pdf}" frameborder="0" width="100%" height="800px">
+    </div>
+
+    <div class="d-grid gap-2" th:fragment="sg">
+        <h5 class="display-6">Version 0</h5>
+        <img th:src="@{/img/spearsgoode.comV0.jpg}" alt="SpearsGoode.com version 0" class="img-fluid"></img>
+        <p>V0 is the first web page I ever made. It was basically just a simple layout using CSS grid and basic HTML and CSS. This was created while watching a tutorial and built on in later versions.</p>
+        <a href="https://archive.spearsgoode.com/v0/SpearsArt.html" class="btn btn-dark fs-6 p-2 mb-4" type="button" target="_blank">Visit SpearsGoode.comV0</a>
+
+        <h5 class="display-6">Version 1</h5>
+        <img th:src="@{/img/spearsgoode.comV1.jpg}" alt="SpearsGoode.com version 1" class="img-fluid"></img>
+        <p>V1 was born when I started getting more and more into learning about coding and I was eager to test out some of my newly acquired skills. I designed my first logo and uploaded a background-image and some artwork. I began messing about with links and menus, and the next thing I knew, my web page was turning into a website. I also started adding content and making plans for what I wanted to do next. In the end, V1 was just a site plan, some artwork, and a description of what I was going to do with the other pages.</p>
+        <a href="https://archive.spearsgoode.com/v1/SpearsGoode.html" class="btn btn-dark fs-6 p-2 mb-4" type="button" target="_blank">Visit SpearsGoode.comV1</a>
+
+        <h5 class="display-6">Version 2</h5>
+        <img th:src="@{/img/spearsgoode.comV2.jpg}" alt="SpearsGoode.com version 2" class="img-fluid"></img>
+        <p>V2 was built from scratch looking at V1. I wanted everything to work together correctly, so I did this to avoid any issues that could arise from my sub-par coding in V1. In V2 I added content to every page and removed the photography page so I could focus on more important parts of my website.</p>
+        <img th:src="@{/img/spearsgoode.comV2-art.jpg}" alt="SpearsGoode.com version 2 art page" class="img-fluid"></img>
+        <p>One element that I focused on was the art card layout on the artwork page. I made them look much nicer by nesting a flexbox within the grid items on the main grid instead of trying to use a grid nested within a grid nested within a grid. I also added the downloadable site archive and my first blog post to the programming and blog pages. I also added on-screen navigation to my home and artwork pages because they were beginning to get quite long.</p>
+        <img th:src="@{/img/spearsgoode.comV2-home.jpg}" alt="SpearsGoode.com version 2 home page" class="img-fluid"></img>
+        <p>In later iterations of V2 I set out to make my site look better. I did this by designing a new logo and using the colors in my new logo as the colors for my site. I also went through my code and added padding and margins to a lot of the content to add more white space. I finished the home page layout and made the art card layout that you can see on the artwork page. Once everything looked nice, I resumed adding content to my site. I added a new blog post, an about me, and an interactive site archive. I also started learning JavaScript and created the testing area on the programming page.</p>
+        <a href="https://archive.spearsgoode.com/v2/SpearsGoode.html" class="btn btn-dark fs-6 p-2 mb-4" type="button" target="_blank">Visit SpearsGoode.comV2</a>
+
+        <h5 class="display-6">Version 3</h5>
+        <img th:src="@{/img/spearsgoode.comV3.jpg}" alt="SpearsGoode.com version 3" class="img-fluid"></img>
+        <p>V3 was built from scratch looking at V2. I had neglected to build my site mobile first in V2 and as bugs compounded, I realized the only remedy was to start over. I spent, by far, the most time on V3. It is the first version that really felt complete.</p>
+        <img th:src="@{/img/spearsgoode.comV3-art.jpg}" alt="SpearsGoode.com version 3 artwork page" class="img-fluid"></img>
+        <p>A lot was added and refined in V3. The most noticeable change was the site design. I spent what felt like countless hours playing with grid and flexbox trying to get everything just right. I also overhauled the color scheme and added a privacy policy and terms of service. The most time consuming change was adding all of my remaining artwork to the site and making sure that each one was labeled correctly. The difficulty I had with this is part of the reason I decided to learn PHP. </p>
+        <a href="https://archive.spearsgoode.com/v3" class="btn btn-dark fs-6 p-2 mb-4" type="button" target="_blank">Visit SpearsGoode.comV3</a>
+
+        <h5 class="display-6">Version 4</h5>
+        <p>Every backup of V4 was unfortunatly lost during my cross country move. The projects page of V4 was nearly identical to V5. V4 also had a page for my artwork and a couple other pages that were never completed. Loosing V4 was very disappointing becasue of how much time and effort went into the projects and artwork pages. I had added all of the info required to generate each art card into a PHP array that could be used to easily add more without having to write any HTML. The page also loaded lightning fast despite the massive amount data required to be fully functional. This was accomplished by first loading a 1kb square as a placeholder for each image. Compressed images were then lazy loaded into the art cards. Each image also contained a button overlay that linked to full sized images that were loaded individually. I plan on recreating this artwork page at some point.</p>
+
+        <h5 class="display-6">Version 5</h5>
+        <p>I have learned my lesson and will never start another project without using a VCS. All code for V5 can be found on my GitHub.</p>
+        <a href="https://github.com/SpearsGoode/spearsgoode.comV5" class="btn btn-dark fs-6 p-2 mb-4" type="button" target="_blank">SpearsGoode.comV5 Repository</a>
+    </div>
+
+
+</body>
+</html>
