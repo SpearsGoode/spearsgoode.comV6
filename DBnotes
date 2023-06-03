@@ -29,3 +29,7 @@ refreshDB();
 COMMON NOTES:
     research CRUD in general
     decide: JSON or XML
+
+
+add entry to DB:
+curl http://localhost:8080/projects/add -d title=TEST0
