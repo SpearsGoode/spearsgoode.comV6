@@ -5,11 +5,7 @@ import com.spearsgoode.models.Project;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping(path="/projects")
@@ -18,7 +14,7 @@ public class ProjectController {
     private ProjectRepo projectRepo;
 
     @PostMapping(path="/add")
-    public @ResponseBody String addNewProject (@RequestParam String title) {
+    public @ResponseBody String addNewProject(@RequestParam String title) {
 
         Project n = new Project();
         n.setTitle(title);
@@ -31,6 +27,12 @@ public class ProjectController {
         n.setInfo("testInfo");
         projectRepo.save(n);
         return "Saved";
+    }
+
+    @PostMapping(path="/delete")
+    public @ResponseBody String deleteProject(@RequestParam Integer id) {
+        projectRepo.deleteById(id);
+        return "Deleted";
     }
 
     @GetMapping
@@ -75,6 +77,13 @@ COMMON NOTES:
     research CRUD in general
     decide: JSON or XML
     research access control & spring.security to protect ability to modify projects
+
+add entry to DB:
+    curl http://localhost:8080/projects/add -d title=TESTx
+
+remove entry from DB:
+    curl http://localhost:8080/projects/delete -d id=x
+
 
 TO DO
     setup persistence

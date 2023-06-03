@@ -61,6 +61,8 @@
   <!-- TEST TEST TEST -->
   <div class="bg-light" th:each="project : ${projects}">
     <h2 th:text="${project.title}"></h2>
+    <h3>ID:</h3>
+    <p th:text="${project.id}"></p>
     <h3>Tag:</h3>
     <p th:text="${project.tag}"></p>
     <h3>Date:</h3>
