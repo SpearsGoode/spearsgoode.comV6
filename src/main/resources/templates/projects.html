@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8">
   <link rel="shortcut icon" type="image/svg" th:href="@{/img/SGlogoV2.svg}">
-  <!--  <link th:href="@{/node_modules/bootstrap/dist/css/bootstrap.min.css}" type="text/css" rel="stylesheet"> FIXME remove?-->
+  <!--  <link th:href="@{/node_modules/bootstrap/dist/css/bootstrap.min.css}" type="modal.html/css" rel="stylesheet"> FIXME remove?-->
   <link th:href="@{/css/main.min.css}" type="text/css" rel="stylesheet">
   <link th:href="@{/node_modules/bootstrap-icons/font/bootstrap-icons.css}" rel="stylesheet"/>
 </head>
@@ -19,7 +19,7 @@
   </div>
 
 
-<!--          v    FIXME Make this into a template  v -->
+<!--          v    FIXME Make this into a template? Modify after adding other pages  v -->
   <!-- NAVIGATION -->
   <nav class="navbar navbar-dark bg-dark sticky-top">
     <div class="container-fluid">
@@ -35,8 +35,6 @@
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body d-flex flex-column">
-
-          <!--            TEST-->
           <ul class="navbar-nav nav-fill pe-3">
             <div th:each="project : ${projects}">
               <li class="nav-item">
@@ -47,16 +45,100 @@
               <a class="nav-link" href="#contact">Contact</a>
             </li>
           </ul>
-          <!--            TEST-->
-
           <img th:src="@{/img/SGlogoV2.svg}" alt="Spears Goode Logo" class="img-fluid m-auto">
         </div>
       </div>
     </div>
   </nav>
-<!--           ^   FIXME Make this into a template   ^ -->
+<!--           ^   FIXME Make this into a template?   ^ -->
 
-  <!-- FIXME PROJECT CARDS -->
+<!--  FIXME
+      use these examples to make compatible with thymeleaf
+      make sure that you are using variables correctly
+      make note of any required changes to DB entries
+-->
+
+  <!-- TEST TEST TEST -->
+  <div class="bg-light" th:each="project : ${projects}">
+    <h2 th:text="${project.title}"></h2>
+
+    <h3>ID:</h3>
+    <p th:text="${project.id}"></p>
+
+    <h3>Tag:</h3>
+    <p th:text="${project.tag}"></p>
+
+    <h3>Date:</h3>
+    <p th:text="${project.date}"></p>
+
+    <h3>Img/Alt:</h3>
+    <p>img text:</p>
+    <p th:text="${project.img}"></p>
+    <p>alt text:</p>
+    <p th:text="${project.alt}"></p>
+    <p>img:</p>
+    <img th:src="@{'/img/' + ${project.img} + '.jpg'}" th:alt="${project.alt}">
+
+    <h3>Link:</h3>
+    <p th:text="${project.link}"></p>
+
+    <h3>Intro:</h3>
+    <p th:text="${project.intro}"></p>
+
+    <h3>Info:</h3>
+    <p th:text="${project.info}"></p>
+  </div>
+  <!-- TEST TEST TEST-->
+
+  <!-- PROJECT CARDS -->
+  <div class="row row-cols-1 row-cols-lg-2 g-4 p-0 ms-auto me-auto container-lg">
+
+<!--
+    <div class="col">
+      <div class="card mt-2 shadow bg-light" id="Abstract-Artwork.com">
+        <div class="card-header">
+          <div class="list-inline">
+          <h4 class="card-title list-inline-item">Abstract-Artwork.com</h4>
+          <span class="badge bg-dark float-end list-inline-item">Completed: April 2019</span>
+        </div>
+      </div>
+    <div class="card-body">
+      <img src="./img/abstract-artwork.jpg" class="img-fluid" alt="Abstract-Artwork.com home page screenshot">
+      <p class="card-text">Haven for Abstract Artists. View abstract artwork from around the globe, meet other abstract artists, and find out what inspires them.</p>
+    </div>
+    <div class="card-footer">
+      <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#AbstractModal"> More Info </button>
+      <a href="https://archive.spearsgoode.com/abstract-artwork.com" class="btn btn-secondary float-end" target="_blank">Visit Site</a>
+    </div>
+-->
+
+<!--
+    <?php
+      foreach ($projectData as $proj) {
+        echo "<div class\"col\">";
+    echo "<div class=\"card mt-2 shadow bg-light\" id=\"" . $proj['title'] . "\">";
+    echo "<div class=\"card-header\">";
+    echo "<div class \"list-inline\">";
+    echo "<h4 class=\"card-title list-inline-item\">" . $proj['title'] . "</h4>";
+    echo "<span class=\"badge bg-dark float-end list-inline-item\">" . $proj['date'] . "</span>";
+    echo "</div>";
+    echo "</div>";
+  echo "<div class=\"card-body\">";
+    echo "<img src=\"./img/" . $proj['img'] . "\" class=\"img-fluid\" alt=\"" . $proj['alt'] . "\">";
+    echo "<p class=\"card-text\">" . $proj['intro'] . "</p>";
+    echo "</div>";
+  echo "<div class=\"card-footer\">";
+    echo "<button type=\"button\" class=\"btn btn-secondary\" data-bs-toggle=\"modal\" data-bs-target=\"#" . $proj['tag'] . "Modal\"> More Info </button>";
+    if ($proj['link'] != "none") {
+    echo "<a href=\"" . $proj['link'] . "\" class=\"btn btn-secondary float-end\" target=\"_blank\">Visit Site</a>";
+    }
+    echo "</div>";
+  echo "</div>";
+  echo "</div>";
+  }
+  ?>
+-->
+  </div>
 
   <!-- FIXME PROJECT MODALS -->
 
