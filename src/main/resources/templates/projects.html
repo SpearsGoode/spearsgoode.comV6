@@ -14,11 +14,6 @@
 
 <body class="container-fluid justify-content-center bg-dark">
 
-  <div class="bg-light">
-    <h1>Welcome to the projects page!</h1>
-  </div>
-
-
 <!--          v    FIXME Make this into a template? Modify after adding other pages  v -->
   <!-- NAVIGATION -->
   <nav class="navbar navbar-dark bg-dark sticky-top">
@@ -59,6 +54,7 @@
 -->
 
   <!-- TEST TEST TEST -->
+<!--
   <div class="bg-light" th:each="project : ${projects}">
     <h2 th:text="${project.title}"></h2>
 
@@ -89,98 +85,46 @@
     <p th:text="${project.info}"></p>
     <div th:replace="~{fragments/modal :: ${project.info}}"></div>
   </div>
+-->
   <!-- TEST TEST TEST-->
 
   <!-- PROJECT CARDS -->
   <div class="row row-cols-1 row-cols-lg-2 g-4 p-0 ms-auto me-auto container-lg">
-
-
-    <div class="col">
-      <div class="card mt-2 shadow bg-light" id="abstract.html-Artwork.com">  <!-- FIXME id-->
+    <div class="col" th:each="project : ${projects}">
+      <div class="card mt-2 shadow bg-light" th:id="${project.tag}">  <!-- FIXME tag-->
         <div class="card-header">
           <div class="list-inline">
-          <h4 class="card-title list-inline-item">abstract.html-Artwork.com</h4> <!-- FIXME title-->
-          <span class="badge bg-dark float-end list-inline-item">Completed: April 2019</span> <!-- FIXME date-->
+          <h4 class="card-title list-inline-item" th:text="${project.title}"></h4> <!-- FIXME title-->
+          <span class="badge bg-dark float-end list-inline-item" th:text="${project.date}"></span> <!-- FIXME date-->
         </div>
       </div>
     <div class="card-body">
-      <img src="./img/abstract-artwork.jpg" class="img-fluid" alt="abstract.html-Artwork.com home page screenshot"> <!-- FIXME img & alt-->
-      <p class="card-text">Haven for abstract.html Artists. View abstract artwork from around the globe, meet other abstract artists, and find out what inspires them.</p> <!--FIXME intro-->
+      <img th:src="@{'/img/' + ${project.img} + '.jpg'}" class="img-fluid" th:alt="${project.alt}"> <!-- FIXME img & alt-->
+      <p class="card-text" th:text="${project.intro}"></p> <!--FIXME intro-->
     </div>
     <div class="card-footer">
-      <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#AbstractModal"> More Info </button> <!-- FIXME id+Modal-->
-      <a href="https://archive.spearsgoode.com/abstract-artwork.com" class="btn btn-secondary float-end" target="_blank">Visit Site</a> <!-- FIXME link-->
+      <button type="button" class="btn btn-secondary" data-bs-toggle="modal" th:data-bs-target="'#' + ${project.tag} + 'Modal'"> More Info </button> <!-- FIXME tag+Modal-->
+      <a th:href="${project.link}" class="btn btn-secondary float-end" target="_blank">Visit Site</a> <!-- FIXME link-->
     </div>
-
-<!--
-    <?php
-      foreach ($projectData as $proj) {
-        echo "<div class\"col\">";
-    echo "<div class=\"card mt-2 shadow bg-light\" id=\"" . $proj['title'] . "\">";
-    echo "<div class=\"card-header\">";
-    echo "<div class \"list-inline\">";
-    echo "<h4 class=\"card-title list-inline-item\">" . $proj['title'] . "</h4>";
-    echo "<span class=\"badge bg-dark float-end list-inline-item\">" . $proj['date'] . "</span>";
-    echo "</div>";
-    echo "</div>";
-  echo "<div class=\"card-body\">";
-    echo "<img src=\"./img/" . $proj['img'] . "\" class=\"img-fluid\" alt=\"" . $proj['alt'] . "\">";
-    echo "<p class=\"card-text\">" . $proj['intro'] . "</p>";
-    echo "</div>";
-  echo "<div class=\"card-footer\">";
-    echo "<button type=\"button\" class=\"btn btn-secondary\" data-bs-toggle=\"modal\" data-bs-target=\"#" . $proj['tag'] . "Modal\"> More Info </button>";
-    if ($proj['link'] != "none") {
-    echo "<a href=\"" . $proj['link'] . "\" class=\"btn btn-secondary float-end\" target=\"_blank\">Visit Site</a>";
-    }
-    echo "</div>";
-  echo "</div>";
-  echo "</div>";
-  }
-  ?>
--->
   </div>
 
   <!-- MODALS -->
 
-  <div class="modal fade" id="AbstractModal" tabindex="-1" aria-labelledby="AbstractModalLabel" aria-hidden="true"> <!--FIXME id+Modal & id+ModalLabel-->
+  <div class="modal fade" th:id="${project.tag} + 'Modal'" tabindex="-1" th:aria-labelledby="${project.tag} + 'ModalLabel'" aria-hidden="true"> <!--FIXME tag+Modal & tag+ModalLabel-->
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-fullscreen-lg-down modal-xl">
       <div class="modal-content bg-light">
         <div class="modal-header">
-          <h5 class="modal-title" id="AbstractModalLabel">Abstract-Artwork.com</h5> <!--FIXME id+ModalLabel & title-->
+          <h5 class="modal-title" th:id="${project.tag} + 'ModalLabel'" th:text="${project.title}"></h5> <!--FIXME tag+ModalLabel & title-->
+          <p class="text-light m-auto" th:text="'id: ' + ${project.id}"></p>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body"></div>  <!--FIXME info-->
+        <div class="modal-body"  th:insert="~{fragments/modal :: ${project.info}}"></div>  <!--FIXME info-->
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
   </div>
-
-  <!--
-  <?php
-    foreach ($projectData as $proj) {
-      echo "<div class=\"modal fade\" id=\"" . $proj['tag'] . "Modal\" tabindex=\"-1\" aria-labelledby=\"" . $proj['tag'] . "ModalLabel\" aria-hidden=\"true\">";
-  echo "<div class=\"modal-dialog modal-dialog-centered modal-dialog-scrollable modal-fullscreen-lg-down modal-xl\">";
-  echo "<div class=\"modal-content bg-light\">";
-  echo "<div class=\"modal-header\">";
-    echo "<h5 class=\"modal-title\" id=\"" . $proj['tag'] . "ModalLabel\">" . $proj['title'] . "</h5>";
-    echo "<button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>";
-    echo "</div>";
-  echo "<div class=\"modal-body\">";
-    echo $proj['info'];
-    echo "</div>";
-  echo "<div class=\"modal-footer\">";
-    echo "<button type=\"button\" class=\"btn btn-secondary\" data-bs-dismiss=\"modal\">Close</button>";
-    echo "</div>";
-  echo "</div>";
-  echo "</div>";
-  echo "</div>";
-  }
-  ?>
-  -->
-
-  <!-- FIXME PROJECT MODALS -->
 
   <!-- FIXME CONTACT FORM-->
 
