@@ -89,11 +89,20 @@ COMMON NOTES:
     research access control & spring.security to protect ability to modify projects
 
 add entry to DB:
-    curl http://localhost:8080/projects/add -d title=TESTx -d etc
-    curl http://localhost:8080/projects/add -d title=abstract.html-Artwork.com -d tag=abstract.html -d "date=Completed: April 2019" -d img=abstract-artwork -d "alt=abstract.html-Artwork.com home page screenshot" -d link=https://archive.spearsgoode.com/abstract-artwork.com -d "intro=Haven for abstract.html Artists. View abstract artwork from around the globe, meet other abstract artists, and find out what inspires them." -d info=abstract.html
+  Template:
+    curl http://localhost:8080/projects/add -d title=x -d tag=x -d "date=x" -d img=x -d "alt=x" -d link=x -d "intro=x" -d info=x
+  Abstract-Artwork.com
+    curl http://localhost:8080/projects/add -d title=Abstract-Artwork.com -d tag=abstract -d "date=Completed: April 2019" -d img=abstract-artwork.jpg -d "alt=Abstract-Artwork.com home page screenshot" -d link=https://archive.spearsgoode.com/abstract-artwork.com -d "intro=Haven for Abstract Artists. View abstract artwork from around the globe, meet other abstract artists, and find out what inspires them." -d info=abstract
+  Armada DAO: FIXME info is PDF and needs different implementation & link is 'none' and a conditional statement must be added
+    curl http://localhost:8080/projects/add -d "title=Armada DAO | Ape Armada" -d tag=armada -d "date=Discontinued: October 2022" -d img=ape_soldier.jpg -d "alt=Ape Armada Ape Soldier" -d link=none -d "intro=A Play to Earn, Multiplayer, First Person Shooter designed to tackle significant problems concerning the design of current generation Play to Earn (P2E) games" -d info=x
+  aHODLm: FIXME not ready
+    curl http://localhost:8080/projects/add -d title=x -d tag=x -d "date=x" -d img=x -d "alt=x" -d link=x -d "intro=x" -d info=x
+  SpearsGoode.com:
+    curl http://localhost:8080/projects/add -d title=SpearsGoode.com -d tag=sg -d date=Ongoing -d img=SGlogoV2tall.svg -d "alt=Spears Goode Logo" -d link=https://archive.spearsgoode.com/ -d "intro=My personal website, which has gone through many different iterations. Its current purpose is to display some of the more important projects I've worked on. In previous versions it stored my artwork and had a blog. The motivation behind this project was initally to document my web development journey and store my artwork in an accessible format." -d info=sg
 
 remove entry from DB:
     curl http://localhost:8080/projects/delete -d id=x
+        -ID can be found by highlighting the title bar of any modal
 
 
 TO DO
