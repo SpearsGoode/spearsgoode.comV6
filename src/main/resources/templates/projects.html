@@ -61,20 +61,30 @@
   <!-- TEST TEST TEST -->
   <div class="bg-light" th:each="project : ${projects}">
     <h2 th:text="${project.title}"></h2>
+
     <h3>ID:</h3>
     <p th:text="${project.id}"></p>
+
     <h3>Tag:</h3>
     <p th:text="${project.tag}"></p>
+
     <h3>Date:</h3>
     <p th:text="${project.date}"></p>
-    <h3>Img:</h3>
+
+    <h3>Img/Alt:</h3>
+    <p>img text:</p>
     <p th:text="${project.img}"></p>
-    <h3>Alt:</h3>
+    <p>alt text:</p>
     <p th:text="${project.alt}"></p>
+    <p>img:</p>
+    <img th:src="@{'/img/' + ${project.img} + '.jpg'}" th:alt="${project.alt}">
+
     <h3>Link:</h3>
     <p th:text="${project.link}"></p>
+
     <h3>Intro:</h3>
     <p th:text="${project.intro}"></p>
+
     <h3>Info:</h3>
     <p th:text="${project.info}"></p>
   </div>

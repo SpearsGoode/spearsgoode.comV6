@@ -14,17 +14,25 @@ public class ProjectController {
     private ProjectRepo projectRepo;
 
     @PostMapping(path="/add")
-    public @ResponseBody String addNewProject(@RequestParam String title) {
+    public @ResponseBody String addNewProject(
+            @RequestParam String title,
+            @RequestParam String tag,
+            @RequestParam String date,
+            @RequestParam String img,
+            @RequestParam String alt,
+            @RequestParam String link,
+            @RequestParam String intro,
+            @RequestParam String info) {
 
         Project n = new Project();
         n.setTitle(title);
-        n.setTag("testTag");
-        n.setDate("testDate");
-        n.setImg("testImg");
-        n.setAlt("testAlt");
-        n.setLink("testLink");
-        n.setIntro("testIntro");
-        n.setInfo("testInfo");
+        n.setTag(tag);
+        n.setDate(date);
+        n.setImg(img);
+        n.setAlt(alt);
+        n.setLink(link);
+        n.setIntro(intro);
+        n.setInfo(info);
         projectRepo.save(n);
         return "Saved";
     }
@@ -79,7 +87,8 @@ COMMON NOTES:
     research access control & spring.security to protect ability to modify projects
 
 add entry to DB:
-    curl http://localhost:8080/projects/add -d title=TESTx
+    curl http://localhost:8080/projects/add -d title=TESTx -d etc
+    curl http://localhost:8080/projects/add -d title=Abstract-Artwork.com -d tag=Abstract -d "date=Completed: April 2019" -d img=abstract-artwork -d "alt=Abstract-Artwork.com home page screenshot" -d link=https://archive.spearsgoode.com/abstract-artwork.com -d "intro=Haven for Abstract Artists. View abstract artwork from around the globe, meet other abstract artists, and find out what inspires them." -d info=testInfo
 
 remove entry from DB:
     curl http://localhost:8080/projects/delete -d id=x
