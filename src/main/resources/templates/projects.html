@@ -87,30 +87,30 @@
 
     <h3>Info:</h3>
     <p th:text="${project.info}"></p>
+    <div th:replace="~{fragments/modal :: ${project.info}}"></div>
   </div>
   <!-- TEST TEST TEST-->
 
   <!-- PROJECT CARDS -->
   <div class="row row-cols-1 row-cols-lg-2 g-4 p-0 ms-auto me-auto container-lg">
 
-<!--
+
     <div class="col">
-      <div class="card mt-2 shadow bg-light" id="Abstract-Artwork.com">
+      <div class="card mt-2 shadow bg-light" id="abstract.html-Artwork.com">  <!-- FIXME id-->
         <div class="card-header">
           <div class="list-inline">
-          <h4 class="card-title list-inline-item">Abstract-Artwork.com</h4>
-          <span class="badge bg-dark float-end list-inline-item">Completed: April 2019</span>
+          <h4 class="card-title list-inline-item">abstract.html-Artwork.com</h4> <!-- FIXME title-->
+          <span class="badge bg-dark float-end list-inline-item">Completed: April 2019</span> <!-- FIXME date-->
         </div>
       </div>
     <div class="card-body">
-      <img src="./img/abstract-artwork.jpg" class="img-fluid" alt="Abstract-Artwork.com home page screenshot">
-      <p class="card-text">Haven for Abstract Artists. View abstract artwork from around the globe, meet other abstract artists, and find out what inspires them.</p>
+      <img src="./img/abstract-artwork.jpg" class="img-fluid" alt="abstract.html-Artwork.com home page screenshot"> <!-- FIXME img & alt-->
+      <p class="card-text">Haven for abstract.html Artists. View abstract artwork from around the globe, meet other abstract artists, and find out what inspires them.</p> <!--FIXME intro-->
     </div>
     <div class="card-footer">
-      <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#AbstractModal"> More Info </button>
-      <a href="https://archive.spearsgoode.com/abstract-artwork.com" class="btn btn-secondary float-end" target="_blank">Visit Site</a>
+      <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#AbstractModal"> More Info </button> <!-- FIXME id+Modal-->
+      <a href="https://archive.spearsgoode.com/abstract-artwork.com" class="btn btn-secondary float-end" target="_blank">Visit Site</a> <!-- FIXME link-->
     </div>
--->
 
 <!--
     <?php
@@ -139,6 +139,46 @@
   ?>
 -->
   </div>
+
+  <!-- MODALS -->
+
+  <div class="modal fade" id="AbstractModal" tabindex="-1" aria-labelledby="AbstractModalLabel" aria-hidden="true"> <!--FIXME id+Modal & id+ModalLabel-->
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-fullscreen-lg-down modal-xl">
+      <div class="modal-content bg-light">
+        <div class="modal-header">
+          <h5 class="modal-title" id="AbstractModalLabel">Abstract-Artwork.com</h5> <!--FIXME id+ModalLabel & title-->
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body"></div>  <!--FIXME info-->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--
+  <?php
+    foreach ($projectData as $proj) {
+      echo "<div class=\"modal fade\" id=\"" . $proj['tag'] . "Modal\" tabindex=\"-1\" aria-labelledby=\"" . $proj['tag'] . "ModalLabel\" aria-hidden=\"true\">";
+  echo "<div class=\"modal-dialog modal-dialog-centered modal-dialog-scrollable modal-fullscreen-lg-down modal-xl\">";
+  echo "<div class=\"modal-content bg-light\">";
+  echo "<div class=\"modal-header\">";
+    echo "<h5 class=\"modal-title\" id=\"" . $proj['tag'] . "ModalLabel\">" . $proj['title'] . "</h5>";
+    echo "<button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>";
+    echo "</div>";
+  echo "<div class=\"modal-body\">";
+    echo $proj['info'];
+    echo "</div>";
+  echo "<div class=\"modal-footer\">";
+    echo "<button type=\"button\" class=\"btn btn-secondary\" data-bs-dismiss=\"modal\">Close</button>";
+    echo "</div>";
+  echo "</div>";
+  echo "</div>";
+  echo "</div>";
+  }
+  ?>
+  -->
 
   <!-- FIXME PROJECT MODALS -->
 
