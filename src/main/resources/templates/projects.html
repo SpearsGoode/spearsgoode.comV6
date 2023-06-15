@@ -75,6 +75,7 @@
 </div>
 
   <!-- TEST TEST TEST -->
+  <!-- Could be useful for error page? -->
 <!--
   <div class="bg-light" th:each="project : ${projects}">
     <h2 th:text="${project.title}"></h2>
@@ -154,12 +155,7 @@
 
   <!-- FIXME CONTACT FORM-->
 
-  <footer>
-    <span class="text-light">&copy; Spears Goode</span>
-  </footer>
-
-  <script th:src="@{/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js}"></script>
-<!--  <span th:replace="~{fragments/common :: js}"></span>-->
+  <th:block th:replace="~{fragments/common :: foot}"></th:block>
 </body>
 
 </html>
