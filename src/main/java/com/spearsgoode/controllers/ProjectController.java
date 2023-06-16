@@ -6,8 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 
 @Controller
 @RequestMapping(path="/projects")
@@ -26,16 +24,7 @@ public class ProjectController {
             @RequestParam String intro,
             @RequestParam String info) {
 
-        Project n = new Project();
-        n.setTitle(title);
-        n.setTag(tag);
-        n.setDate(date);
-        n.setImg(img);
-        n.setAlt(alt);
-        if (link.equals("null")) n.setLink(null);
-        else n.setLink(link);
-        n.setIntro(intro);
-        n.setInfo(info);
+        Project n = new Project(title, tag, date, img, alt, link, intro, info);
         projectRepo.save(n);
         return "Saved";
     }

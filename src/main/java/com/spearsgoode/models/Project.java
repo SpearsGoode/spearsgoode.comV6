@@ -19,6 +19,26 @@ public class Project {
     private String intro;   // Into Text for Project
     private String info;    // Content for Project Modal
 
+        /* ----------
+        CONSTRUCTORS
+     */
+    public Project() {} // Default constructor
+
+    public Project(String title) {
+        this.title = title;
+    }
+
+    public Project(String title, String tag, String date, String img, String alt, String link, String intro, String info) {
+        this.title = title;
+        this.tag = tag;
+        this.date = date;
+        this.img = img;
+        this.alt = alt;
+        this.link = link.equals("null") ? null : link;
+        this.intro = intro;
+        this.info = info;
+    }
+
     /* ----------
         GETTERS
      */

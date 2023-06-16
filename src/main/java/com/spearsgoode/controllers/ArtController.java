@@ -1,19 +1,24 @@
 package com.spearsgoode.controllers;
 
+import com.spearsgoode.interfaces.ProjectRepo;
+import com.spearsgoode.models.Project;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
+@RequestMapping(path="/art")
 public class ArtController {
 
-    @GetMapping("/art")
-    public String art(Model model) {
-        // Add model attributes
-        model.addAttribute("message", "Welcome to the Art page!");  //FIXME
+    @Autowired
+    private ProjectRepo projectRepo;
 
-        // Return the view name
+    @GetMapping
+    public String Projects(Model model) {
+        Iterable<Project> projects = projectRepo.findAll();
+        model.addAttribute("projects", projects);
         return "art";
-
     }
 }
