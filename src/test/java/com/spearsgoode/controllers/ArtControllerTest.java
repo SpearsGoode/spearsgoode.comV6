@@ -14,8 +14,8 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import java.util.Arrays;
 import java.util.List;
 
-@WebMvcTest(HomeController.class)
-public class HomeControllerTest {
+@WebMvcTest(ArtController.class)
+public class ArtControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
@@ -24,20 +24,20 @@ public class HomeControllerTest {
     private ProjectRepo projectRepo;
 
     @Test
-    public void testHomePage() throws Exception {
+    public void testArtPage() throws Exception {
         List<Project> projects = Arrays.asList(
                 new Project("Project 1"),
                 new Project("Project 2"),
                 new Project("Project 3")
         );
 
-        // Mock the behavior of the projectRepo.findAll() method
+        // Set up the behavior of the projectRepo mock
         Mockito.when(projectRepo.findAll()).thenReturn(projects);
 
-        // Perform the GET request to "/home" and verify the response
-        mockMvc.perform(MockMvcRequestBuilders.get("/"))
+        // Perform the GET request to "/art" and verify the response
+        mockMvc.perform(MockMvcRequestBuilders.get("/art"))
                 .andExpect(MockMvcResultMatchers.status().isOk())
-                .andExpect(MockMvcResultMatchers.view().name("home"))
+                .andExpect(MockMvcResultMatchers.view().name("art"))
                 .andExpect(MockMvcResultMatchers.model().attributeExists("projects"))
                 .andExpect(MockMvcResultMatchers.model().attribute("projects", projects));
     }
