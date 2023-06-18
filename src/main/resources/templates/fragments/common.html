@@ -5,7 +5,7 @@
 <body>
 
     <th:block th:fragment="nav">
-        <nav class="navbar navbar-dark sticky-top">
+        <nav class="navbar navbar-dark bg-dark sticky-top">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
                     <img th:src="@{/img/SGlogoV2.svg}" alt="Spears Goode Logo" width="50" height="50">
@@ -25,14 +25,14 @@
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Projects</a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="./projects">All Projects</a></li>
-                                    <li><hr class="dropdown-divider"></li>
+                                <ul class="dropdown-menu bg-secondary">
+                                    <li><a class="dropdown-item text-bg-secondary" href="./projects">All Projects</a></li>
+                                    <li><hr class="dropdown-divider text-bg-secondary"></li>
                                     <th:block th:each="project : ${projects}">
-                                        <li><a class="dropdown-item" th:href="'./projects#' + ${project.tag}" th:text="${project.title}"></a></li>
+                                        <li><a class="dropdown-item text-bg-secondary" th:href="'./projects#' + ${project.tag}" th:text="${project.title}"></a></li>
                                     </th:block>
-                                    <li><hr class="dropdown-divider"></li>
-                                    <li><a class="dropdown-item" href="./projects#contact">Contact</a></li>
+                                    <li><hr class="dropdown-divider text-bg-secondary"></li>
+                                    <li><a class="dropdown-item text-bg-secondary" href="./projects#contact">Contact</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item">
