@@ -1,6 +1,8 @@
 package com.spearsgoode.controllers;
 
+import com.spearsgoode.interfaces.ArtRepo;
 import com.spearsgoode.interfaces.ProjectRepo;
+import com.spearsgoode.models.Art;
 import com.spearsgoode.models.Project;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -22,6 +24,8 @@ public class ArtControllerTest {
 
     @MockBean
     private ProjectRepo projectRepo;
+    @MockBean
+    ArtRepo artRepo;
 
     @Test
     public void testArtPage() throws Exception {
@@ -31,14 +35,25 @@ public class ArtControllerTest {
                 new Project("Project 3")
         );
 
+        List<Art> artList = Arrays.asList(
+                new Art("Art 1"),
+                new Art("Art 2"),
+                new Art("Art 3")
+        );
+
         // Set up the behavior of the projectRepo mock
         Mockito.when(projectRepo.findAll()).thenReturn(projects);
+
+        // Set up the behavior of the artRepo mock
+        Mockito.when(artRepo.findAll()).thenReturn(artList);
 
         // Perform the GET request to "/art" and verify the response
         mockMvc.perform(MockMvcRequestBuilders.get("/art"))
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.view().name("art"))
                 .andExpect(MockMvcResultMatchers.model().attributeExists("projects"))
-                .andExpect(MockMvcResultMatchers.model().attribute("projects", projects));
+                .andExpect(MockMvcResultMatchers.model().attribute("projects", projects))
+                .andExpect(MockMvcResultMatchers.model().attributeExists("arts"))
+                .andExpect(MockMvcResultMatchers.model().attribute("arts", artList));
     }
 }

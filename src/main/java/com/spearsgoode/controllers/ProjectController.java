@@ -67,15 +67,9 @@ addToLocal();
         modifies local modal.html file
             JSON or XML
 
-refreshDB();
-    checkEmpty();
-    if yes add locally stored projects
-    if no: return 1
-
 
 COMMON NOTES:
     research CRUD in general
-    decide: JSON or XML
     research access control & spring.security to protect ability to modify projects
 
 add entry to DB:

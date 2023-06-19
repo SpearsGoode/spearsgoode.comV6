@@ -22,14 +22,14 @@ public class ArtController {
     public @ResponseBody String addNewArt(
             @RequestParam String title,
             @RequestParam String medium,
-            @RequestParam String link,
+            @RequestParam String img,
             @RequestParam String type,
             @RequestParam String category,
             @RequestParam Double height,
             @RequestParam Double width,
             @RequestParam Boolean feature) {
 
-        Art n = new Art(title, medium, link, type, category, height, width, feature);
+        Art n = new Art(title, medium, img, type, category, height, width, feature);
         artRepo.save(n);
         return "Saved";
     }
@@ -41,11 +41,11 @@ public class ArtController {
     }
 
     @GetMapping
-    public String Projects(Model model) {
+    public String Projects(Model model) { // FIXME - Rename !!!
         Iterable<Project> projects = projectRepo.findAll();
         model.addAttribute("projects", projects);
-        Iterable<Art> art = artRepo.findAll();
-        model.addAttribute("art", art);
+        Iterable<Art> arts = artRepo.findAll();
+        model.addAttribute("arts", arts);
         return "art";
     }
 }

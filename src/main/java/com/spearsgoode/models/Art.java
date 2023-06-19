@@ -13,7 +13,7 @@ public class Art {
     private Integer id;
     private String title;
     private String medium;
-    private String link;
+    private String img;
     private String type;
     private String category;
     private double height;
@@ -25,10 +25,14 @@ public class Art {
    */
     public Art() {}
 
-    public Art(String title, String medium, String link, String type, String category, double height, double width, boolean feature) {
+    public Art(String title) {
+        this.title = title;
+    }
+
+    public Art(String title, String medium, String img, String type, String category, double height, double width, boolean feature) {
         this.title = title;
         this.medium = medium;
-        this.link = link;
+        this.img = img;
         this.type = type;
         this.category = category;
         this.height = height;
@@ -52,8 +56,8 @@ public class Art {
         return medium;
     }
 
-    public String getLink() {
-        return link;
+    public String getImg() {
+        return img;
     }
 
     public String getType() {
@@ -88,8 +92,8 @@ public class Art {
         this.medium = medium;
     }
 
-    public void setLink(String link) {
-        this.link = link;
+    public void setImg(String img) {
+        this.img = img;
     }
 
     public void setType(String type) {
