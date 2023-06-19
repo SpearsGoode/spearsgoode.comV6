@@ -31,7 +31,8 @@ public class ProjectController {
 
     @PostMapping(path="/delete")
     public @ResponseBody String deleteProject(@RequestParam Integer id) {
-        projectRepo.deleteById(id);
+        if (id == 0) projectRepo.deleteAll();
+        else projectRepo.deleteById(id);
         return "Deleted";
     }
 

@@ -36,7 +36,8 @@ public class ArtController {
 
     @PostMapping(path="/delete")
     public @ResponseBody String deleteArt(@RequestParam Integer id) {
-        artRepo.deleteById(id);
+        if (id == 0) artRepo.deleteAll();
+        else artRepo.deleteById(id);
         return "Deleted";
     }
 

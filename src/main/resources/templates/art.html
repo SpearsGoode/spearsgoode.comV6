@@ -65,7 +65,7 @@
                 <img class="card-img-top" th:src="@{'/art/' + ${art.img} + 'Full.png'}" th:alt="@{${art.title} + ' a ' + ${art.medium} + ' by Spears Goode'}">
                 <div class="card-body">
                     <h5 class="card-title" th:text="${art.title}"></h5>
-                    <p class="card-text" th:text="${art.medium}"></p>
+                    <p class="card-text" th:text="@{${art.medium} + '  ID: ' + ${art.id}}"></p>
                 </div>
             </div>
         </div>
