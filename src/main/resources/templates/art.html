@@ -54,7 +54,7 @@
         <p>alt text:</p>
         <p th:text="@{${art.title} + ' a ' + ${art.medium} + ' by Spears Goode'}"></p>
         <p>img:</p>
-        <img th:src="@{'/art/full/' + ${art.img} + '.png'}" th:alt="@{${art.title} + ' a ' + ${art.medium} + ' by Spears Goode'}">
+        <img th:src="@{'/art/' + ${art.img} + 'Full.png'}" th:alt="@{${art.title} + ' a ' + ${art.medium} + ' by Spears Goode'}">
       </div>
 
     <!-- TEST TEST TEST-->

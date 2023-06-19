@@ -49,3 +49,15 @@ public class ArtController {
         return "art";
     }
 }
+
+/*
+
+add entry to DB:
+  Template:
+    curl http://localhost:8080/art/add -d title=x -d medium=x -d img=x -d type=x -d category=x -d height=x -d width=x -d feature=x
+  Test Image
+    curl http://localhost:8080/art/add -d "title=Test Image" -d medium=screenshot -d img=testImg -d "type=print screen" -d category=digital -d height=750 -d width=631 -d feature=True
+
+
+
+*/
