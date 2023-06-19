@@ -6,8 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 
 @Controller
 @RequestMapping(path="/projects")
@@ -26,16 +24,7 @@ public class ProjectController {
             @RequestParam String intro,
             @RequestParam String info) {
 
-        Project n = new Project();
-        n.setTitle(title);
-        n.setTag(tag);
-        n.setDate(date);
-        n.setImg(img);
-        n.setAlt(alt);
-        if (link.equals("null")) n.setLink(null);
-        else n.setLink(link);
-        n.setIntro(intro);
-        n.setInfo(info);
+        Project n = new Project(title, tag, date, img, alt, link, intro, info);
         projectRepo.save(n);
         return "Saved";
     }
@@ -78,15 +67,9 @@ addToLocal();
         modifies local modal.html file
             JSON or XML
 
-refreshDB();
-    checkEmpty();
-    if yes add locally stored projects
-    if no: return 1
-
 
 COMMON NOTES:
     research CRUD in general
-    decide: JSON or XML
     research access control & spring.security to protect ability to modify projects
 
 add entry to DB:
@@ -95,7 +78,7 @@ add entry to DB:
   Abstract-Artwork.com
     curl http://localhost:8080/projects/add -d title=Abstract-Artwork.com -d tag=abstract -d "date=Completed: April 2019" -d img=abstract-artwork.jpg -d "alt=Abstract-Artwork.com home page screenshot" -d link=https://archive.spearsgoode.com/abstract-artwork.com -d "intro=Haven for Abstract Artists. View abstract artwork from around the globe, meet other abstract artists, and find out what inspires them." -d info=abstract
   Armada DAO: FIXME
-    curl http://localhost:8080/projects/add -d "title=Armada DAO | Ape Armada" -d tag=armada -d "date=Discontinued: October 2022" -d img=ape_soldier.jpg -d "alt=Ape Armada Ape Soldier" -d link=null -d "intro=A Play to Earn, Multiplayer, First Person Shooter designed to tackle significant problems concerning the design of current generation Play to Earn (P2E) games" -d info=armada
+    curl http://localhost:8080/projects/add -d "title=Ape Armada DAO" -d tag=armada -d "date=Discontinued: October 2022" -d img=ape_soldier.jpg -d "alt=Ape Armada Ape Soldier" -d link=null -d "intro=A Play to Earn, Multiplayer, First Person Shooter designed to tackle significant problems concerning the design of current generation Play to Earn (P2E) games" -d info=armada
   aHODLm: FIXME
     curl http://localhost:8080/projects/add -d "title=aHODLm Indicator" -d tag=aHODLm -d "date=Shelved: August 2020" -d img=aHODLm.jpg -d "alt=aHODLm indicator BTC example" -d link=null -d "intro=Detects likelihood of significant movements. At points of high risk it takes profit and at points of low risk it increases the position size. Since its inception it has proven its ability to swing trade effectively with minimal oversight." -d info=aHODLm
   SpearsGoode.com:

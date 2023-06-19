@@ -21,6 +21,44 @@
       <h1>Welcome to the Art page!</h1>
     </div>
 
+    <!-- TEST TEST TEST -->
+    <!-- Could be useful for error page? -->
+
+      <div class="bg-light" th:each="art : ${arts}">
+        <h2 th:text="${art.title}"></h2>
+
+        <h3>Medium:</h3>
+        <p th:text="${art.medium}"></p>
+
+        <h3>ID:</h3>
+        <p th:text="${art.id}"></p>
+
+        <h3>Category:</h3>
+        <p th:text="${art.category}"></p>
+
+        <h3>Type:</h3>
+        <p th:text="${art.type}"></p>
+
+        <h3>Height:</h3>
+        <p th:text="${art.height}"></p>
+
+        <h3>Width:</h3>
+        <p th:text="${art.width}"></p>
+
+        <h3>Feature:</h3>
+        <p th:text="${art.feature}"></p>
+
+        <h3>Img/Alt:</h3>
+        <p>img text:</p>
+        <p th:text="${art.img}"></p>
+        <p>alt text:</p>
+        <p th:text="@{${art.title} + ' a ' + ${art.medium} + ' by Spears Goode'}"></p>
+        <p>img:</p>
+        <img th:src="@{'/art/' + ${art.img} + 'Full.png'}" th:alt="@{${art.title} + ' a ' + ${art.medium} + ' by Spears Goode'}">
+      </div>
+
+    <!-- TEST TEST TEST-->
+
     <th:block th:replace="~{fragments/common :: foot}"></th:block>
 </body>
 
