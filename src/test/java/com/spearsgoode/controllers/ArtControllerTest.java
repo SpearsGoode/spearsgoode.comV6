@@ -13,6 +13,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -35,17 +36,20 @@ public class ArtControllerTest {
                 new Project("Project 3")
         );
 
-        List<Art> artList = Arrays.asList(
-                new Art("Art 1"),
-                new Art("Art 2"),
-                new Art("Art 3")
+        List<Art> allArt = Arrays.asList(
+                new Art("a painting", "testMedium", "testImgFull.png", "testImgFull.png", "trad", "paint", 0, 0, false),
+                new Art("a featured painting", "testMedium", "testImgFull.png", "testImgFull.png", "trad", "paint", 0, 0, true),
+                new Art("a drawing", "testMedium", "testImgFull.png", "testImgFull.png", "trad", "draw", 0, 0, false),
+                new Art("an other", "testMedium", "testImgFull.png", "testImgFull.png", "trad", "other", 0, 0, false),
+                new Art("a logo", "testMedium", "testImgFull.png", "testImgFull.png", "digi", "logo", 0, 0, false),
+                new Art("a cover", "testMedium", "testImgFull.png", "testImgFull.png", "digi", "cover", 0, 0, false)
         );
 
         // Set up the behavior of the projectRepo mock
         Mockito.when(projectRepo.findAll()).thenReturn(projects);
 
         // Set up the behavior of the artRepo mock
-        Mockito.when(artRepo.findAll()).thenReturn(artList);
+        Mockito.when(artRepo.findAll()).thenReturn(allArt);
 
         // Perform the GET request to "/art" and verify the response
         mockMvc.perform(MockMvcRequestBuilders.get("/art"))
@@ -53,7 +57,37 @@ public class ArtControllerTest {
                 .andExpect(MockMvcResultMatchers.view().name("art"))
                 .andExpect(MockMvcResultMatchers.model().attributeExists("projects"))
                 .andExpect(MockMvcResultMatchers.model().attribute("projects", projects))
-                .andExpect(MockMvcResultMatchers.model().attributeExists("arts"))
-                .andExpect(MockMvcResultMatchers.model().attribute("arts", artList));
+                .andExpect(MockMvcResultMatchers.model().attributeExists("paintings"))
+                .andExpect(MockMvcResultMatchers.model().attribute("paintings", filterByCategory(allArt, "paint")))
+                .andExpect(MockMvcResultMatchers.model().attributeExists("drawings"))
+                .andExpect(MockMvcResultMatchers.model().attribute("drawings", filterByCategory(allArt, "draw")))
+                .andExpect(MockMvcResultMatchers.model().attributeExists("otherArt"))
+                .andExpect(MockMvcResultMatchers.model().attribute("otherArt", filterByCategory(allArt, "other")))
+                .andExpect(MockMvcResultMatchers.model().attributeExists("logos"))
+                .andExpect(MockMvcResultMatchers.model().attribute("logos", filterByCategory(allArt, "logo")))
+                .andExpect(MockMvcResultMatchers.model().attributeExists("covers"))
+                .andExpect(MockMvcResultMatchers.model().attribute("covers", filterByCategory(allArt, "cover")))
+                .andExpect(MockMvcResultMatchers.model().attributeExists("featured"))
+                .andExpect(MockMvcResultMatchers.model().attribute("featured", filterByFeature(allArt)));
+    }
+
+    private List<Art> filterByCategory(List<Art> allArt, String category) {
+        List<Art> filteredList = new ArrayList<>();
+        for (Art art : allArt) {
+            if (art.getCategory().equals(category)) {
+                filteredList.add(art);
+            }
+        }
+        return filteredList;
+    }
+
+    private List<Art> filterByFeature(List<Art> allArt) {
+        List<Art> filteredList = new ArrayList<>();
+        for (Art art : allArt) {
+            if (art.getFeature()) {
+                filteredList.add(art);
+            }
+        }
+        return filteredList;
     }
 }

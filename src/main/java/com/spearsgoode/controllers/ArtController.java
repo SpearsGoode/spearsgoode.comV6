@@ -9,6 +9,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+
 @Controller
 @RequestMapping(path="/art")
 public class ArtController {
@@ -46,8 +49,35 @@ public class ArtController {
     public String getAttributes(Model model) {
         Iterable<Project> projects = projectRepo.findAll();
         model.addAttribute("projects", projects);
-        Iterable<Art> arts = artRepo.findAll();
-        model.addAttribute("arts", arts);
+
+        // get all art & init sub lists
+        Iterable<Art> allArt = artRepo.findAll();
+        ArrayList<Art> featured = new ArrayList<Art>();
+        ArrayList<Art> paintings = new ArrayList<Art>();
+        ArrayList<Art> drawings = new ArrayList<Art>();
+        ArrayList<Art> otherArt = new ArrayList<Art>();
+        ArrayList<Art> logos = new ArrayList<Art>();
+        ArrayList<Art> covers = new ArrayList<Art>();
+
+        // break into sub lists
+        for (Art c : allArt) {
+            if (c.getFeature()) featured.add(c);
+            if (c.getCategory() == "paint") paintings.add(c);
+            else if (c.getCategory() == "draw") drawings.add(c);
+            else if (c.getCategory() == "other") otherArt.add(c);
+            else if (c.getCategory() == "logo") logos.add(c);
+            else if (c.getCategory() == "cover") covers.add(c);
+        }
+
+        // add sub lists as attributes
+
+        model.addAttribute("featured", featured);
+        model.addAttribute("paintings", paintings);
+        model.addAttribute("drawings", drawings);
+        model.addAttribute("otherArt", otherArt);
+        model.addAttribute("logos", logos);
+        model.addAttribute("covers", covers);
+
         return "art";
     }
 }
