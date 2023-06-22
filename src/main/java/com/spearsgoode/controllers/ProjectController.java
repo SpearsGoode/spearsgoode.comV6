@@ -37,7 +37,7 @@ public class ProjectController {
     }
 
     @GetMapping
-    public String getProjects(Model model) {
+    public String getAttributes(Model model) {
         Iterable<Project> projects = projectRepo.findAll();
         model.addAttribute("projects", projects);
         return "projects";

@@ -21,6 +21,49 @@
       <h1>Welcome to the Art page!</h1>
     </div>
 
+
+<!--
+
+  FIXME:    Make this work within a loop
+  FIXME:        - Need to add an indicator and item for each (optional)
+  FIXME:        - Need different behavior on first iteration and increment on each
+  FIXME:            - use iteration status variables
+
+  https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#keeping-iteration-status
+
+-->
+    <div id="featuredArtCarousel" class="carousel slide">
+
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#featuredArtCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#featuredArtCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#featuredArtCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="..." class="d-block w-100" alt="..."> <!-- FIXME th:src th:alt -->
+            </div>
+            <div class="carousel-item">
+                <img src="..." class="d-block w-100" alt="..."> <!-- FIXME th:src th:alt  -->
+            </div>
+            <div class="carousel-item">
+                <img src="..." class="d-block w-100" alt="..."> <!-- FIXME th:src th:alt  -->
+            </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#featuredArtCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+
+        <button class="carousel-control-next" type="button" data-bs-target="#featuredArtCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+
+    </div>
+
     <!-- TEST TEST TEST -->
     <!-- Could be useful for error page? -->
 <!--

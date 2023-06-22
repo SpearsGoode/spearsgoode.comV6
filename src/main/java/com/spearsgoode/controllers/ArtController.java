@@ -42,7 +42,7 @@ public class ArtController {
     }
 
     @GetMapping
-    public String Projects(Model model) { // FIXME - Rename !!!
+    public String getAttributes(Model model) {
         Iterable<Project> projects = projectRepo.findAll();
         model.addAttribute("projects", projects);
         Iterable<Art> arts = artRepo.findAll();
