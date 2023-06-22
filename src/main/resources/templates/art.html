@@ -106,7 +106,7 @@
     <div class="row" data-masonry='{"percentPosition": true}'>
         <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 0%; top: 0px;" th:each="art : ${arts}">
             <div class="card bg-light">
-                <img class="card-img-top" th:src="@{'/art/' + ${art.img} + 'Full.png'}" th:alt="@{${art.title} + ' a ' + ${art.medium} + ' by Spears Goode'}">
+                <img class="card-img-top" th:src="@{'/art/' + ${art.imgComp}}" th:alt="@{${art.title} + ' - ' + ${art.medium} + ' by Spears Goode'}">
                 <div class="card-body">
                     <h5 class="card-title" th:text="${art.title}"></h5>
                     <p class="card-text" th:text="@{${art.medium} + '  ID: ' + ${art.id}}"></p>

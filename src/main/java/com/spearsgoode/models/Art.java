@@ -13,7 +13,8 @@ public class Art {
     private Integer id;
     private String title;
     private String medium;
-    private String img;
+    private String imgFull;
+    private String imgComp;
     private String type;
     private String category;
     private double height;
@@ -29,10 +30,11 @@ public class Art {
         this.title = title;
     }
 
-    public Art(String title, String medium, String img, String type, String category, double height, double width, boolean feature) {
+    public Art(String title, String medium, String imgFull, String imgComp, String type, String category, double height, double width, boolean feature) {
         this.title = title;
         this.medium = medium;
-        this.img = img;
+        this.imgFull = imgFull;
+        this.imgComp = imgComp;
         this.type = type;
         this.category = category;
         this.height = height;
@@ -56,8 +58,12 @@ public class Art {
         return medium;
     }
 
-    public String getImg() {
-        return img;
+    public String getImgFull() {
+        return imgFull;
+    }
+
+    public String getImgComp() {
+        return imgComp;
     }
 
     public String getType() {
@@ -92,8 +98,12 @@ public class Art {
         this.medium = medium;
     }
 
-    public void setImg(String img) {
-        this.img = img;
+    public void setImgFull(String imgFull) {
+        this.imgFull = imgFull;
+    }
+
+    public void setImgComp(String imgComp) {
+        this.imgComp = imgComp;
     }
 
     public void setType(String type) {

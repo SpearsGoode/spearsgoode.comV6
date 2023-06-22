@@ -22,14 +22,15 @@ public class ArtController {
     public @ResponseBody String addNewArt(
             @RequestParam String title,
             @RequestParam String medium,
-            @RequestParam String img,
+            @RequestParam String imgFull,
+            @RequestParam String imgComp,
             @RequestParam String type,
             @RequestParam String category,
             @RequestParam Double height,
             @RequestParam Double width,
             @RequestParam Boolean feature) {
 
-        Art n = new Art(title, medium, img, type, category, height, width, feature);
+        Art n = new Art(title, medium, imgFull, imgComp, type, category, height, width, feature);
         artRepo.save(n);
         return "Saved";
     }
