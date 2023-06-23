@@ -18,34 +18,21 @@
     <th:block th:replace="~{fragments/common :: nav}"></th:block>
 
     <!-- FEATURED ART -->
-<!--
-
-  FIXME:    Make this work within a loop
-  FIXME:        - Need to add an indicator and item for each (optional)
-  FIXME:        - Need different behavior on first iteration and increment on each
-  FIXME:            - use iteration status variables
-
-  https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#keeping-iteration-status
-
--->
 
     <div class="card m-4 ms-auto me-auto shadow bg-light" style="max-width: 960px">
         <h2 class="display-2 card-header">Featured Art</h2>
         <div id="featuredArtCarousel" class="carousel slide card-body">
+            <!-- FIXME: add later?
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#featuredArtCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                 <button type="button" data-bs-target="#featuredArtCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
                 <button type="button" data-bs-target="#featuredArtCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
+            -->
+            <!-- FIXME: make dimensions static to prevent resizing for each item -->
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="..." class="d-block w-100" alt="..."> <!-- FIXME th:src th:alt -->
-                </div>
-                <div class="carousel-item">
-                    <img src="..." class="d-block w-100" alt="..."> <!-- FIXME th:src th:alt  -->
-                </div>
-                <div class="carousel-item">
-                    <img src="..." class="d-block w-100" alt="..."> <!-- FIXME th:src th:alt  -->
+                <div th:each="art : ${featured}" th:class="${artStat.first} ? 'carousel-item active' : 'carousel-item'">
+                    <img th:src="@{'/art/' + ${art.imgFull}}" class="d-block w-100" th:alt="@{${art.title} + ' - ' + ${art.medium} + ' by Spears Goode'}">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#featuredArtCarousel" data-bs-slide="prev">
@@ -94,7 +81,7 @@
         <p>alt text:</p>
         <p th:text="@{${art.title} + ' a ' + ${art.medium} + ' by Spears Goode'}"></p>
         <p>img:</p>
-        <img th:src="@{'/art/' + ${art.img} + 'Full.png'}" th:alt="@{${art.title} + ' a ' + ${art.medium} + ' by Spears Goode'}">
+        <img th:src="@{'/art/' + ${art.imgFull}}" th:alt="@{${art.title} + ' - ' + ${art.medium} + ' by Spears Goode'}">
       </div>
 -->
     <!-- TEST TEST TEST-->
@@ -102,14 +89,29 @@
     <!-- DIGITAL -->
     <h2 class="display-2 text-light">Digital</h2>
 
-
+        <!-- LOGOS -->
+    <h3 class="text-light">Logos</h3>
     <div class="row" data-masonry='{"percentPosition": true}'>
-        <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 0%; top: 0px;" th:each="art : ${arts}">
+        <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 0%; top: 0px;" th:each="art : ${logos}">
             <div class="card bg-light">
                 <img class="card-img-top" th:src="@{'/art/' + ${art.imgComp}}" th:alt="@{${art.title} + ' - ' + ${art.medium} + ' by Spears Goode'}">
                 <div class="card-body">
                     <h5 class="card-title" th:text="${art.title}"></h5>
-                    <p class="card-text" th:text="@{${art.medium} + '  ID: ' + ${art.id}}"></p>
+                    <p class="card-text" th:text="@{${art.medium} + ' |  ID: ' + ${art.id}}"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- COVER ART -->
+    <h3 class="text-light">Cover Art</h3>
+    <div class="row" data-masonry='{"percentPosition": true}'>
+        <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 0%; top: 0px;" th:each="art : ${covers}">
+            <div class="card bg-light">
+                <img class="card-img-top" th:src="@{'/art/' + ${art.imgComp}}" th:alt="@{${art.title} + ' - ' + ${art.medium} + ' by Spears Goode'}">
+                <div class="card-body">
+                    <h5 class="card-title" th:text="${art.title}"></h5>
+                    <p class="card-text" th:text="@{${art.medium} + ' |  ID: ' + ${art.id}}"></p>
                 </div>
             </div>
         </div>
@@ -117,6 +119,48 @@
 
     <!-- TRADITIONAL -->
     <h2 class="display-2 text-light">Traditional</h2>
+
+        <!-- PAINTINGS -->
+    <h3 class="text-light">Paintings</h3>
+    <div class="row" data-masonry='{"percentPosition": true}'>
+        <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 0%; top: 0px;" th:each="art : ${paintings}">
+            <div class="card bg-light">
+                <img class="card-img-top" th:src="@{'/art/' + ${art.imgComp}}" th:alt="@{${art.title} + ' - ' + ${art.medium} + ' by Spears Goode'}">
+                <div class="card-body">
+                    <h5 class="card-title" th:text="${art.title}"></h5>
+                    <p class="card-text" th:text="@{${art.medium} + ' |  ID: ' + ${art.id}}"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- DRAWINGS -->
+    <h3 class="text-light">Drawings</h3>
+    <div class="row" data-masonry='{"percentPosition": true}'>
+        <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 0%; top: 0px;" th:each="art : ${drawings}">
+            <div class="card bg-light">
+                <img class="card-img-top" th:src="@{'/art/' + ${art.imgComp}}" th:alt="@{${art.title} + ' - ' + ${art.medium} + ' by Spears Goode'}">
+                <div class="card-body">
+                    <h5 class="card-title" th:text="${art.title}"></h5>
+                    <p class="card-text" th:text="@{${art.medium} + ' |  ID: ' + ${art.id}}"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- OTHER -->
+    <h3 class="text-light">Other</h3>
+    <div class="row" data-masonry='{"percentPosition": true}'>
+        <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 0%; top: 0px;" th:each="art : ${others}">
+            <div class="card bg-light">
+                <img class="card-img-top" th:src="@{'/art/' + ${art.imgComp}}" th:alt="@{${art.title} + ' - ' + ${art.medium} + ' by Spears Goode'}">
+                <div class="card-body">
+                    <h5 class="card-title" th:text="${art.title}"></h5>
+                    <p class="card-text" th:text="@{${art.medium} + ' |  ID: ' + ${art.id}}"></p>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <th:block th:replace="~{fragments/common :: foot}"></th:block>

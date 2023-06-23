@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Objects;
 
 @Controller
 @RequestMapping(path="/art")
@@ -55,18 +56,18 @@ public class ArtController {
         ArrayList<Art> featured = new ArrayList<Art>();
         ArrayList<Art> paintings = new ArrayList<Art>();
         ArrayList<Art> drawings = new ArrayList<Art>();
-        ArrayList<Art> otherArt = new ArrayList<Art>();
+        ArrayList<Art> others = new ArrayList<Art>();
         ArrayList<Art> logos = new ArrayList<Art>();
         ArrayList<Art> covers = new ArrayList<Art>();
 
         // break into sub lists
         for (Art c : allArt) {
             if (c.getFeature()) featured.add(c);
-            if (c.getCategory() == "paint") paintings.add(c);
-            else if (c.getCategory() == "draw") drawings.add(c);
-            else if (c.getCategory() == "other") otherArt.add(c);
-            else if (c.getCategory() == "logo") logos.add(c);
-            else if (c.getCategory() == "cover") covers.add(c);
+            if (Objects.equals(c.getCategory(), "paint")) paintings.add(c);
+            else if (Objects.equals(c.getCategory(), "draw")) drawings.add(c);
+            else if (Objects.equals(c.getCategory(), "other")) others.add(c);
+            else if (Objects.equals(c.getCategory(), "logo")) logos.add(c);
+            else if (Objects.equals(c.getCategory(), "cover")) covers.add(c);
         }
 
         // add sub lists as attributes
@@ -74,7 +75,7 @@ public class ArtController {
         model.addAttribute("featured", featured);
         model.addAttribute("paintings", paintings);
         model.addAttribute("drawings", drawings);
-        model.addAttribute("otherArt", otherArt);
+        model.addAttribute("others", others);
         model.addAttribute("logos", logos);
         model.addAttribute("covers", covers);
 
