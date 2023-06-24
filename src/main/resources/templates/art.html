@@ -142,14 +142,18 @@
 <!--        </div>-->
 
         <!-- LOGOS -->
-        <h3 class="text-light">Logos</h3>
-        <div class="row" data-masonry='{"percentPosition": true}'>
-            <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 0%; top: 0px;" th:each="art : ${logos}">
-                <div class="card bg-light">
-                    <img class="card-img-top" th:src="@{'/art/' + ${art.imgComp}}" th:alt="@{${art.title} + ' - ' + ${art.medium} + ' by Spears Goode'}">
-                    <div class="card-body">
-                        <h5 class="card-title" th:text="${art.title}"></h5>
-                        <p class="card-text" th:text="@{${art.medium} + ' |  ID: ' + ${art.id}}"></p>
+        <button class="btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLogo" aria-expanded="false" aria-controls="collapseLogo">
+            <h3 class="text-light">Logos</h3>
+        </button>
+        <div class="collpase" id="collapseLogo">
+            <div class="row" data-masonry='{"percentPosition": true}'>
+                <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 0%; top: 0px;" th:each="art : ${logos}">
+                    <div class="card bg-light">
+                        <img class="card-img-top" th:src="@{'/art/' + ${art.imgComp}}" th:alt="@{${art.title} + ' - ' + ${art.medium} + ' by Spears Goode'}">
+                        <div class="card-body">
+                            <h5 class="card-title" th:text="${art.title}"></h5>
+                            <p class="card-text" th:text="@{${art.medium} + ' |  ID: ' + ${art.id}}"></p>
+                        </div>
                     </div>
                 </div>
             </div>
