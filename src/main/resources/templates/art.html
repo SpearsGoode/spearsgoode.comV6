@@ -145,9 +145,9 @@
         <button class="btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLogo" aria-expanded="false" aria-controls="collapseLogo">
             <h3 class="text-light">Logos</h3>
         </button>
-        <div class="collapse show" id="collapseLogo">
-            <div class="row" data-masonry='{"percentPosition": true}'>
-                <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 0%; top: 0px;" th:each="art : ${logos}">
+        <div class="collapse" id="collapseLogo">
+            <div class="row" id="mason">
+                <div class="col-sm-6 col-lg-4 mb-4 mason-item" style="position: absolute; left: 0%; top: 0px;" th:each="art : ${logos}">
                     <div class="card bg-light">
                         <img class="card-img-top" th:src="@{'/art/' + ${art.imgComp}}" th:alt="@{${art.title} + ' - ' + ${art.medium} + ' by Spears Goode'}">
                         <div class="card-body">
@@ -220,7 +220,7 @@
     </div>
 
     <th:block th:replace="~{fragments/common :: foot}"></th:block>
-<script th:src="@{/js/mason.js}"></script>
+    <script th:src="@{/js/mason.js}"></script>
 </body>
 
 </html>
