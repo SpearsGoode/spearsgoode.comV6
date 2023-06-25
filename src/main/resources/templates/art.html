@@ -30,8 +30,8 @@
         -->
         <!-- FIXME: make dimensions static to prevent resizing for each item  (object-fit ?)-->
         <div class="carousel-inner" style="height: 40vh">
-            <div th:each="art : ${featured}" th:class="${artStat.first} ? 'carousel-item active' : 'carousel-item'">
-                <img th:src="@{'/art/' + ${art.imgFull}}" class="img-fluid" th:alt="@{${art.title} + ' - ' + ${art.medium} + ' by Spears Goode'}">
+            <div th:each="art : ${featured}" th:class="${artStat.first} ? 'rounded carousel-item active' : 'rounded carousel-item'">
+                <img th:src="@{'/art/full/' + ${art.imgFull}}" class="img-fluid rounded" th:alt="@{${art.title} + ' - ' + ${art.medium} + ' by Spears Goode'}">
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#featuredArtCarousel" data-bs-slide="prev">
@@ -45,7 +45,7 @@
     </div>
 
 
-    <div class="card text-center m-4 ms-auto me-auto shadow bg-light" style="max-width: 960px">
+    <div class="card text-center mb-4 mt-2 ms-auto me-auto shadow bg-light" style="max-width: 960px">
         <figure class="card-body mb-0 pb-0">
             <p class="lead">Who Influenced my Artwork?</p>
             <blockquote class="mt-4">
@@ -172,13 +172,7 @@
         <div class="collapse" id="collapseLogo">
             <div class="row" id="masonLogo">
                 <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4 mason-item" style="position: absolute; left: 0%; top: 0px;" th:each="art : ${logos}">
-                    <div class="card bg-light">
-                        <img class="card-img-top" th:src="@{'/art/' + ${art.imgComp}}" th:alt="@{${art.title} + ' - ' + ${art.medium} + ' by Spears Goode'}">
-                        <div class="card-body">
-                            <h5 class="card-title" th:text="${art.title}"></h5>
-                            <p class="card-text" th:text="@{${art.medium} + ' |  ID: ' + ${art.id}}"></p>
-                        </div>
-                    </div>
+                    <th:block th:replace="~{fragments/art :: card}"></th:block>
                 </div>
             </div>
         </div>
@@ -190,13 +184,7 @@
         <div class="collapse" id="collapseCover">
             <div class="row" id="masonCover">
                 <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4 mason-item" style="position: absolute; left: 0%; top: 0px;" th:each="art : ${covers}">
-                    <div class="card bg-light">
-                        <img class="card-img-top" th:src="@{'/art/' + ${art.imgComp}}" th:alt="@{${art.title} + ' - ' + ${art.medium} + ' by Spears Goode'}">
-                        <div class="card-body">
-                            <h5 class="card-title" th:text="${art.title}"></h5>
-                            <p class="card-text" th:text="@{${art.medium} + ' |  ID: ' + ${art.id}}"></p>
-                        </div>
-                    </div>
+                    <th:block th:replace="~{fragments/art :: card}"></th:block>
                 </div>
             </div>
         </div>
@@ -211,13 +199,7 @@
         <div class="collapse" id="collapsePaint">
             <div class="row" id="masonPaint">
                 <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4 mason-item" style="position: absolute; left: 0%; top: 0px;" th:each="art : ${paintings}">
-                    <div class="card bg-light">
-                        <img class="card-img-top" th:src="@{'/art/' + ${art.imgComp}}" th:alt="@{${art.title} + ' - ' + ${art.medium} + ' by Spears Goode'}">
-                        <div class="card-body">
-                            <h5 class="card-title" th:text="${art.title}"></h5>
-                            <p class="card-text" th:text="@{${art.medium} + ' |  ID: ' + ${art.id}}"></p>
-                        </div>
-                    </div>
+                    <th:block th:replace="~{fragments/art :: card}"></th:block>
                 </div>
             </div>
         </div>
@@ -230,13 +212,7 @@
         <div class="collapse" id="collapseDraw">
             <div class="row" id="masonDraw">
                 <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4 mason-item" style="position: absolute; left: 0%; top: 0px;" th:each="art : ${drawings}">
-                    <div class="card bg-light">
-                        <img class="card-img-top" th:src="@{'/art/' + ${art.imgComp}}" th:alt="@{${art.title} + ' - ' + ${art.medium} + ' by Spears Goode'}">
-                        <div class="card-body">
-                            <h5 class="card-title" th:text="${art.title}"></h5>
-                            <p class="card-text" th:text="@{${art.medium} + ' |  ID: ' + ${art.id}}"></p>
-                        </div>
-                    </div>
+                    <th:block th:replace="~{fragments/art :: card}"></th:block>
                 </div>
             </div>
         </div>
@@ -248,13 +224,7 @@
         <div class="collapse" id="collapseOther">
             <div class="row" id="masonOther">
                 <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4 mason-item" style="position: absolute; left: 0%; top: 0px;" th:each="art : ${others}">
-                    <div class="card bg-light">
-                        <img class="card-img-top" th:src="@{'/art/' + ${art.imgComp}}" th:alt="@{${art.title} + ' - ' + ${art.medium} + ' by Spears Goode'}">
-                        <div class="card-body">
-                            <h5 class="card-title" th:text="${art.title}"></h5>
-                            <p class="card-text" th:text="@{${art.medium} + ' |  ID: ' + ${art.id}}"></p>
-                        </div>
-                    </div>
+                    <th:block th:replace="~{fragments/art :: card}"></th:block>
                 </div>
             </div>
         </div>

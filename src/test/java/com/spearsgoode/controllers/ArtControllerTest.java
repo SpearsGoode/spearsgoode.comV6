@@ -37,12 +37,12 @@ public class ArtControllerTest {
         );
 
         List<Art> allArt = Arrays.asList(
-                new Art("a painting", "testMedium", "testImgFull.png", "testImgFull.png", "trad", "paint", 0, 0, false),
-                new Art("a featured painting", "testMedium", "testImgFull.png", "testImgFull.png", "trad", "paint", 0, 0, true),
-                new Art("a drawing", "testMedium", "testImgFull.png", "testImgFull.png", "trad", "draw", 0, 0, false),
-                new Art("an other", "testMedium", "testImgFull.png", "testImgFull.png", "trad", "other", 0, 0, false),
-                new Art("a logo", "testMedium", "testImgFull.png", "testImgFull.png", "digi", "logo", 0, 0, false),
-                new Art("a cover", "testMedium", "testImgFull.png", "testImgFull.png", "digi", "cover", 0, 0, false)
+                new Art("a painting", "testMedium", "testImg.png", "testImg.png", "trad", "paint", 0, 0, false),
+                new Art("a featured painting", "testMedium", "testImg.png", "testImg.png", "trad", "paint", 0, 0, true),
+                new Art("a drawing", "testMedium", "testImg.png", "testImg.png", "trad", "draw", 0, 0, false),
+                new Art("an other", "testMedium", "testImg.png", "testImg.png", "trad", "other", 0, 0, false),
+                new Art("a logo", "testMedium", "testImg.png", "testImg.png", "digi", "logo", 0, 0, false),
+                new Art("a cover", "testMedium", "testImg.png", "testImg.png", "digi", "cover", 0, 0, false)
         );
 
         // Set up the behavior of the projectRepo mock
