@@ -29,7 +29,7 @@
         </div>
         -->
         <!-- FIXME: make dimensions static to prevent resizing for each item  (object-fit ?)-->
-        <div class="carousel-inner d-flex" style="height: 70vh">
+        <div class="carousel-inner d-flex" style="height: 40vh">
             <div th:each="art : ${featured}" th:class="${artStat.first} ? 'carousel-item active' : 'carousel-item'">
                 <img th:src="@{'/art/' + ${art.imgFull}}" class="img-fluid" th:alt="@{${art.title} + ' - ' + ${art.medium} + ' by Spears Goode'}">
             </div>
