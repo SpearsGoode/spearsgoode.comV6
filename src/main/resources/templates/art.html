@@ -147,7 +147,7 @@
         </button>
         <div class="collapse" id="collapseLogo">
             <div class="row" id="masonLogo">
-                <div class="col-sm-6 col-lg-4 mb-4 mason-item" style="position: absolute; left: 0%; top: 0px;" th:each="art : ${logos}">
+                <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4 mason-item" style="position: absolute; left: 0%; top: 0px;" th:each="art : ${logos}">
                     <div class="card bg-light">
                         <img class="card-img-top" th:src="@{'/art/' + ${art.imgComp}}" th:alt="@{${art.title} + ' - ' + ${art.medium} + ' by Spears Goode'}">
                         <div class="card-body">
@@ -165,7 +165,7 @@
         </button>
         <div class="collapse" id="collapseCover">
             <div class="row" id="masonCover">
-                <div class="col-sm-6 col-lg-4 mb-4 mason-item" style="position: absolute; left: 0%; top: 0px;" th:each="art : ${covers}">
+                <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4 mason-item" style="position: absolute; left: 0%; top: 0px;" th:each="art : ${covers}">
                     <div class="card bg-light">
                         <img class="card-img-top" th:src="@{'/art/' + ${art.imgComp}}" th:alt="@{${art.title} + ' - ' + ${art.medium} + ' by Spears Goode'}">
                         <div class="card-body">
@@ -186,7 +186,7 @@
         </button>
         <div class="collapse" id="collapsePaint">
             <div class="row" id="masonPaint">
-                <div class="col-sm-6 col-lg-4 mb-4 mason-item" style="position: absolute; left: 0%; top: 0px;" th:each="art : ${paintings}">
+                <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4 mason-item" style="position: absolute; left: 0%; top: 0px;" th:each="art : ${paintings}">
                     <div class="card bg-light">
                         <img class="card-img-top" th:src="@{'/art/' + ${art.imgComp}}" th:alt="@{${art.title} + ' - ' + ${art.medium} + ' by Spears Goode'}">
                         <div class="card-body">
@@ -205,7 +205,7 @@
         </button>
         <div class="collapse" id="collapseDraw">
             <div class="row" id="masonDraw">
-                <div class="col-sm-6 col-lg-4 mb-4 mason-item" style="position: absolute; left: 0%; top: 0px;" th:each="art : ${drawings}">
+                <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4 mason-item" style="position: absolute; left: 0%; top: 0px;" th:each="art : ${drawings}">
                     <div class="card bg-light">
                         <img class="card-img-top" th:src="@{'/art/' + ${art.imgComp}}" th:alt="@{${art.title} + ' - ' + ${art.medium} + ' by Spears Goode'}">
                         <div class="card-body">
@@ -223,7 +223,7 @@
         </button>
         <div class="collapse" id="collapseOther">
             <div class="row" id="masonOther">
-                <div class="col-sm-6 col-lg-4 mb-4 mason-item" style="position: absolute; left: 0%; top: 0px;" th:each="art : ${others}">
+                <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4 mason-item" style="position: absolute; left: 0%; top: 0px;" th:each="art : ${others}">
                     <div class="card bg-light">
                         <img class="card-img-top" th:src="@{'/art/' + ${art.imgComp}}" th:alt="@{${art.title} + ' - ' + ${art.medium} + ' by Spears Goode'}">
                         <div class="card-body">
