@@ -21,7 +21,7 @@
 
     <div class="card m-4 ms-auto me-auto shadow bg-light" style="max-width: 960px">
         <h2 class="display-2 card-header">Featured Art</h2>
-        <div id="featuredArtCarousel" class="carousel slide card-body" data-bs-ride="carousel">
+        <div id="featuredArtCarousel" class="carousel slide card-body" data-bs-ride="true">
             <!-- FIXME: add later?
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#featuredArtCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -88,7 +88,7 @@
     
     
 
-    <div>
+    <div class="d-flex flex-column">
         <!-- DIGITAL -->
         <h2 class="display-2 text-light">Digital</h2>
 
@@ -142,11 +142,11 @@
 <!--        </div>-->
 
         <!-- LOGOS -->
-        <button class="btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLogo" aria-expanded="false" aria-controls="collapseLogo">
-            <h3 class="text-light">Logos</h3>
+        <button class="btn btn-outline-light mb-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLogo" aria-expanded="false" aria-controls="collapseLogo">
+            <h3>Logos</h3>
         </button>
         <div class="collapse" id="collapseLogo">
-            <div class="row" id="mason">
+            <div class="row" id="masonLogo">
                 <div class="col-sm-6 col-lg-4 mb-4 mason-item" style="position: absolute; left: 0%; top: 0px;" th:each="art : ${logos}">
                     <div class="card bg-light">
                         <img class="card-img-top" th:src="@{'/art/' + ${art.imgComp}}" th:alt="@{${art.title} + ' - ' + ${art.medium} + ' by Spears Goode'}">
@@ -160,14 +160,18 @@
         </div>
 
         <!-- COVER ART -->
-        <h3 class="text-light">Cover Art</h3>
-        <div class="row" data-masonry='{"percentPosition": true}'>
-            <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 0%; top: 0px;" th:each="art : ${covers}">
-                <div class="card bg-light">
-                    <img class="card-img-top" th:src="@{'/art/' + ${art.imgComp}}" th:alt="@{${art.title} + ' - ' + ${art.medium} + ' by Spears Goode'}">
-                    <div class="card-body">
-                        <h5 class="card-title" th:text="${art.title}"></h5>
-                        <p class="card-text" th:text="@{${art.medium} + ' |  ID: ' + ${art.id}}"></p>
+        <button class="btn btn-outline-light mb-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCover" aria-expanded="false" aria-controls="collapseCover">
+            <h3>Cover Art</h3>
+        </button>
+        <div class="collapse" id="collapseCover">
+            <div class="row" id="masonCover">
+                <div class="col-sm-6 col-lg-4 mb-4 mason-item" style="position: absolute; left: 0%; top: 0px;" th:each="art : ${covers}">
+                    <div class="card bg-light">
+                        <img class="card-img-top" th:src="@{'/art/' + ${art.imgComp}}" th:alt="@{${art.title} + ' - ' + ${art.medium} + ' by Spears Goode'}">
+                        <div class="card-body">
+                            <h5 class="card-title" th:text="${art.title}"></h5>
+                            <p class="card-text" th:text="@{${art.medium} + ' |  ID: ' + ${art.id}}"></p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -177,46 +181,60 @@
         <h2 class="display-2 text-light">Traditional</h2>
 
         <!-- PAINTINGS -->
-        <h3 class="text-light">Paintings</h3>
-        <div class="row" data-masonry='{"percentPosition": true}'>
-            <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 0%; top: 0px;" th:each="art : ${paintings}">
-                <div class="card bg-light">
-                    <img class="card-img-top" th:src="@{'/art/' + ${art.imgComp}}" th:alt="@{${art.title} + ' - ' + ${art.medium} + ' by Spears Goode'}">
-                    <div class="card-body">
-                        <h5 class="card-title" th:text="${art.title}"></h5>
-                        <p class="card-text" th:text="@{${art.medium} + ' |  ID: ' + ${art.id}}"></p>
+        <button class="btn btn-outline-light mb-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePaint" aria-expanded="false" aria-controls="collapsePaint">
+            <h3>Paintings</h3>
+        </button>
+        <div class="collapse" id="collapsePaint">
+            <div class="row" id="masonPaint">
+                <div class="col-sm-6 col-lg-4 mb-4 mason-item" style="position: absolute; left: 0%; top: 0px;" th:each="art : ${paintings}">
+                    <div class="card bg-light">
+                        <img class="card-img-top" th:src="@{'/art/' + ${art.imgComp}}" th:alt="@{${art.title} + ' - ' + ${art.medium} + ' by Spears Goode'}">
+                        <div class="card-body">
+                            <h5 class="card-title" th:text="${art.title}"></h5>
+                            <p class="card-text" th:text="@{${art.medium} + ' |  ID: ' + ${art.id}}"></p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
+
         <!-- DRAWINGS -->
-        <h3 class="text-light">Drawings</h3>
-        <div class="row" data-masonry='{"percentPosition": true}'>
-            <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 0%; top: 0px;" th:each="art : ${drawings}">
-                <div class="card bg-light">
-                    <img class="card-img-top" th:src="@{'/art/' + ${art.imgComp}}" th:alt="@{${art.title} + ' - ' + ${art.medium} + ' by Spears Goode'}">
-                    <div class="card-body">
-                        <h5 class="card-title" th:text="${art.title}"></h5>
-                        <p class="card-text" th:text="@{${art.medium} + ' |  ID: ' + ${art.id}}"></p>
+        <button class="btn btn-outline-light mb-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDraw" aria-expanded="false" aria-controls="collapseDraw">
+            <h3>Drawings</h3>
+        </button>
+        <div class="collapse" id="collapseDraw">
+            <div class="row" id="masonDraw">
+                <div class="col-sm-6 col-lg-4 mb-4 mason-item" style="position: absolute; left: 0%; top: 0px;" th:each="art : ${drawings}">
+                    <div class="card bg-light">
+                        <img class="card-img-top" th:src="@{'/art/' + ${art.imgComp}}" th:alt="@{${art.title} + ' - ' + ${art.medium} + ' by Spears Goode'}">
+                        <div class="card-body">
+                            <h5 class="card-title" th:text="${art.title}"></h5>
+                            <p class="card-text" th:text="@{${art.medium} + ' |  ID: ' + ${art.id}}"></p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- OTHER -->
-        <h3 class="text-light">Other</h3>
-        <div class="row" data-masonry='{"percentPosition": true}'>
-            <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 0%; top: 0px;" th:each="art : ${others}">
-                <div class="card bg-light">
-                    <img class="card-img-top" th:src="@{'/art/' + ${art.imgComp}}" th:alt="@{${art.title} + ' - ' + ${art.medium} + ' by Spears Goode'}">
-                    <div class="card-body">
-                        <h5 class="card-title" th:text="${art.title}"></h5>
-                        <p class="card-text" th:text="@{${art.medium} + ' |  ID: ' + ${art.id}}"></p>
+        <button class="btn btn-outline-light mb-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOther" aria-expanded="false" aria-controls="collapseOther">
+            <h3>Other</h3>
+        </button>
+        <div class="collapse" id="collapseOther">
+            <div class="row" id="masonOther">
+                <div class="col-sm-6 col-lg-4 mb-4 mason-item" style="position: absolute; left: 0%; top: 0px;" th:each="art : ${others}">
+                    <div class="card bg-light">
+                        <img class="card-img-top" th:src="@{'/art/' + ${art.imgComp}}" th:alt="@{${art.title} + ' - ' + ${art.medium} + ' by Spears Goode'}">
+                        <div class="card-body">
+                            <h5 class="card-title" th:text="${art.title}"></h5>
+                            <p class="card-text" th:text="@{${art.medium} + ' |  ID: ' + ${art.id}}"></p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
 
     <th:block th:replace="~{fragments/common :: foot}"></th:block>
