@@ -19,32 +19,58 @@
 
     <!-- FEATURED ART -->
 
-    <div class="card m-4 ms-auto me-auto shadow bg-light" style="max-width: 960px">
-        <h2 class="display-2 card-header">Featured Art</h2>
-        <div id="featuredArtCarousel" class="carousel slide card-body" data-bs-ride="true">
-            <!-- FIXME: add later?
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#featuredArtCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#featuredArtCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#featuredArtCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
-            -->
-            <!-- FIXME: make dimensions static to prevent resizing for each item  (object-fit ?)-->
-            <div class="carousel-inner">
-                <div th:each="art : ${featured}" th:class="${artStat.first} ? 'carousel-item active' : 'carousel-item'">
-                    <img th:src="@{'/art/' + ${art.imgFull}}" class="d-block w-100" th:alt="@{${art.title} + ' - ' + ${art.medium} + ' by Spears Goode'}">
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#featuredArtCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#featuredArtCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+
+    <div id="featuredArtCarousel" class="carousel slide" data-bs-ride="carousel">
+        <!-- FIXME: add later?
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#featuredArtCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#featuredArtCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#featuredArtCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
+        -->
+        <!-- FIXME: make dimensions static to prevent resizing for each item  (object-fit ?)-->
+        <div class="carousel-inner d-flex" style="height: 70vh">
+            <div th:each="art : ${featured}" th:class="${artStat.first} ? 'carousel-item active' : 'carousel-item'">
+                <img th:src="@{'/art/' + ${art.imgFull}}" class="img-fluid" th:alt="@{${art.title} + ' - ' + ${art.medium} + ' by Spears Goode'}">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#featuredArtCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#featuredArtCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
+
+
+<!--    <div class="card m-4 ms-auto me-auto shadow bg-light" style="max-width: 960px">-->
+<!--        <h2 class="display-2 card-header">Featured Art</h2>-->
+<!--        <div id="featuredArtCarousel" class="carousel slide card-body" data-bs-ride="true">-->
+<!--            &lt;!&ndash; FIXME: add later?-->
+<!--            <div class="carousel-indicators">-->
+<!--                <button type="button" data-bs-target="#featuredArtCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>-->
+<!--                <button type="button" data-bs-target="#featuredArtCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>-->
+<!--                <button type="button" data-bs-target="#featuredArtCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>-->
+<!--            </div>-->
+<!--            &ndash;&gt;-->
+<!--            &lt;!&ndash; FIXME: make dimensions static to prevent resizing for each item  (object-fit ?)&ndash;&gt;-->
+<!--            <div class="carousel-inner">-->
+<!--                <div th:each="art : ${featured}" th:class="${artStat.first} ? 'carousel-item active' : 'carousel-item'">-->
+<!--                    <img th:src="@{'/art/' + ${art.imgFull}}" class="d-block w-100" th:alt="@{${art.title} + ' - ' + ${art.medium} + ' by Spears Goode'}">-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <button class="carousel-control-prev" type="button" data-bs-target="#featuredArtCarousel" data-bs-slide="prev">-->
+<!--                <span class="carousel-control-prev-icon" aria-hidden="true"></span>-->
+<!--                <span class="visually-hidden">Previous</span>-->
+<!--            </button>-->
+<!--            <button class="carousel-control-next" type="button" data-bs-target="#featuredArtCarousel" data-bs-slide="next">-->
+<!--                <span class="carousel-control-next-icon" aria-hidden="true"></span>-->
+<!--                <span class="visually-hidden">Next</span>-->
+<!--            </button>-->
+<!--        </div>-->
+<!--    </div>-->
 
 
 
