@@ -17,13 +17,64 @@
     <!-- NAVIGATION -->
     <th:block th:replace="~{fragments/common :: nav}"></th:block>
 
-    <div class="bg-light">
-      <h1>Welcome to the Art page!</h1>
+    <!-- FEATURED ART -->
+
+
+    <div id="featuredArtCarousel" class="carousel slide" data-bs-ride="carousel">
+        <!-- FIXME: add later?
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#featuredArtCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#featuredArtCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#featuredArtCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        -->
+        <!-- FIXME: make dimensions static to prevent resizing for each item  (object-fit ?)-->
+        <div class="carousel-inner" style="height: 40vh">
+            <div th:each="art : ${featured}" th:class="${artStat.first} ? 'rounded carousel-item active' : 'rounded carousel-item'">
+                <img th:src="@{'/art/full/' + ${art.imgFull}}" class="img-fluid rounded" th:alt="@{${art.title} + ' - ' + ${art.medium} + ' by Spears Goode'}">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#featuredArtCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#featuredArtCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
+
+
+    <div class="card text-center mb-4 mt-2 ms-auto me-auto shadow bg-light" style="max-width: 960px">
+        <figure class="card-body mb-0 pb-0">
+            <p class="lead">Who Influenced my Artwork?</p>
+            <blockquote class="mt-4">
+                <p>My largest influences are <a style="text-decoration:underline;" href="https://www.wassilykandinsky.net/" target="_blank">Wassily Kandinsky</a>, and my two high school teachers <a style="text-decoration:underline;" href="http://www.dannybroadway.com/" target="_blank">Danny Broadway</a> and <a style="text-decoration:underline;" href="https://www.facebook.com/ALM-Premier-Graphics-Art-by-Andre-L-Miller-128608387183967/" target="_blank">Andre Miller</a>. Both of my teachers are incredibly talented and I recommend their work to anyone. Without their instruction, it is unlikely my work would be nearly as extensive, and I know it would not be as good.</p>
+            </blockquote>
+        </figure>
+        <div class="card-footer list-inline">
+            <a href="https://github.com/SpearsGoode/" class="list-inline-item" target="_blank">
+                <i class="bi bi-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/spears-goode/" class="list-inline-item" target="_blank">
+                <i class="bi bi-linkedin"></i>
+            </a>
+            <a href="https://twitter.com/SpearsGoode/" class="list-inline-item" target="_blank">
+                <i class="bi bi-twitter"></i>
+            </a>
+            <a href="https://www.instagram.com/spearsgoode/" class="list-inline-item" target="_blank">
+                <i class="bi bi-instagram"></i>
+            </a>
+            <a href="#contact" class="list-inline-item">
+                <i class="bi bi-send"></i>
+            </a>
+        </div>
+    </div>
+
 
     <!-- TEST TEST TEST -->
     <!-- Could be useful for error page? -->
-
+<!--
       <div class="bg-light" th:each="art : ${arts}">
         <h2 th:text="${art.title}"></h2>
 
@@ -54,12 +105,110 @@
         <p>alt text:</p>
         <p th:text="@{${art.title} + ' a ' + ${art.medium} + ' by Spears Goode'}"></p>
         <p>img:</p>
-        <img th:src="@{'/art/' + ${art.img} + 'Full.png'}" th:alt="@{${art.title} + ' a ' + ${art.medium} + ' by Spears Goode'}">
+        <img th:src="@{'/art/' + ${art.imgFull}}" th:alt="@{${art.title} + ' - ' + ${art.medium} + ' by Spears Goode'}">
       </div>
-
+-->
     <!-- TEST TEST TEST-->
+    
+    
+
+    <div class="d-flex flex-column">
+        <!-- DIGITAL -->
+        <h2 class="display-2 text-light">Digital</h2>
+
+        <!-- LOGOS -->
+        <button class="btn btn-outline-light mb-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLogo" aria-expanded="false" aria-controls="collapseLogo">
+            <h3>Logos</h3>
+        </button>
+        <div class="collapse" id="collapseLogo">
+            <div class="row" id="masonLogo">
+                <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4 mason-item" style="position: absolute; left: 0%; top: 0px;" th:each="art : ${logos}">
+                    <th:block th:replace="~{fragments/art :: card}"></th:block>
+                </div>
+            </div>
+            <div class="d-grid m-4 mt-0">
+                <button class="btn btn-outline-danger" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLogo" aria-expanded="false" aria-controls="collapseLogo">
+                    <h4>Close</h4>
+                </button>
+            </div>
+        </div>
+
+        <!-- COVER ART -->
+        <button class="btn btn-outline-light mb-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCover" aria-expanded="false" aria-controls="collapseCover">
+            <h3>Cover Art</h3>
+        </button>
+        <div class="collapse" id="collapseCover">
+            <div class="row" id="masonCover">
+                <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4 mason-item" style="position: absolute; left: 0%; top: 0px;" th:each="art : ${covers}">
+                    <th:block th:replace="~{fragments/art :: card}"></th:block>
+                </div>
+            </div>
+            <div class="d-grid m-4 mt-0">
+                <button class="btn btn-outline-danger" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCover" aria-expanded="false" aria-controls="collapseCover">
+                    <h4>Close</h4>
+                </button>
+            </div>
+        </div>
+
+        <!-- TRADITIONAL -->
+        <h2 class="display-2 text-light">Traditional</h2>
+
+        <!-- PAINTINGS -->
+        <button class="btn btn-outline-light mb-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePaint" aria-expanded="false" aria-controls="collapsePaint">
+            <h3>Paintings</h3>
+        </button>
+        <div class="collapse" id="collapsePaint">
+            <div class="row" id="masonPaint">
+                <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4 mason-item" style="position: absolute; left: 0%; top: 0px;" th:each="art : ${paintings}">
+                    <th:block th:replace="~{fragments/art :: card}"></th:block>
+                </div>
+            </div>
+            <div class="d-grid m-4 mt-0">
+                <button class="btn btn-outline-danger" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePaint" aria-expanded="false" aria-controls="collapsePaint">
+                    <h4>Close</h4>
+                </button>
+            </div>
+        </div>
+
+
+        <!-- DRAWINGS -->
+        <button class="btn btn-outline-light mb-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDraw" aria-expanded="false" aria-controls="collapseDraw">
+            <h3>Drawings</h3>
+        </button>
+        <div class="collapse" id="collapseDraw">
+            <div class="row" id="masonDraw">
+                <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4 mason-item" style="position: absolute; left: 0%; top: 0px;" th:each="art : ${drawings}">
+                    <th:block th:replace="~{fragments/art :: card}"></th:block>
+                </div>
+            </div>
+            <div class="d-grid m-4 mt-0">
+                <button class="btn btn-outline-danger" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDraw" aria-expanded="false" aria-controls="collapseDraw">
+                    <h4>Close</h4>
+                </button>
+            </div>
+        </div>
+
+        <!-- OTHER -->
+        <button class="btn btn-outline-light mb-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOther" aria-expanded="false" aria-controls="collapseOther">
+            <h3>Other</h3>
+        </button>
+        <div class="collapse" id="collapseOther">
+            <div class="row" id="masonOther">
+                <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4 mason-item" style="position: absolute; left: 0%; top: 0px;" th:each="art : ${others}">
+                    <th:block th:replace="~{fragments/art :: card}"></th:block>
+                </div>
+            </div>
+            <div class="d-grid m-4 mt-0">
+                <button class="btn btn-outline-danger" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOther" aria-expanded="false" aria-controls="collapseOther">
+                    <h4>Close</h4>
+                </button>
+            </div>
+        </div>
+
+    </div>
 
     <th:block th:replace="~{fragments/common :: foot}"></th:block>
+    <script th:src="@{/js/mason.js}"></script>
 </body>
 
 </html>
