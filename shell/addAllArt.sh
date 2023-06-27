@@ -50,7 +50,7 @@ curl http://localhost:8080/art/add -d title=Regret -d "medium=Oil Paint and Phot
     # --=== PAINTINGS ===--
 
 # Loosing Control
-curl http://localhost:8080/art/add -d "title=loosing Control" -d "medium=Oil Paint" -d imgFull=loosingControl.jpg -d imgComp=loosingControl.jpg -d type=trad -d category=paint -d height=0 -d width=0 -d feature=true
+curl http://localhost:8080/art/add -d "title=loosing Control" -d "medium=Oil Paint" -d imgFull=loosingControl.jpg -d imgComp=loosingControl.jpg -d type=trad -d category=paint -d height=0 -d width=0 -d feature=false
 
 # Chaos & Harmony
 curl http://localhost:8080/art/add -d "title=Chaos and Harmony" -d "medium=India Ink" -d imgFull=chaosHarmony.jpg -d imgComp=chaosHarmony.jpg -d type=trad -d category=paint -d height=0 -d width=0 -d feature=false
@@ -65,7 +65,7 @@ curl http://localhost:8080/art/add -d title=Sensation -d "medium=Watercolor and 
 curl http://localhost:8080/art/add -d "title=Lemon Daze" -d medium=Gauche -d imgFull=lemonDaze.jpg -d imgComp=lemonDaze.jpg -d type=trad -d category=paint -d height=0 -d width=0 -d feature=false
 
 # Blood Money
-curl http://localhost:8080/art/add -d "title=Blood Money" -d "medium=Oil Paint" -d imgFull=bloodMoney.jpg -d imgComp=bloodMoney.jpg -d type=trad -d category=paint -d height=0 -d width=0 -d feature=true
+curl http://localhost:8080/art/add -d "title=Blood Money" -d "medium=Oil Paint" -d imgFull=bloodMoney.jpg -d imgComp=bloodMoney.jpg -d type=trad -d category=paint -d height=0 -d width=0 -d feature=false
 
 # Wishy Washy
 curl http://localhost:8080/art/add -d "title=Wishy Washy" -d "medium=Oil Paint" -d imgFull=wishyWashy.jpg -d imgComp=wishyWashy.jpg -d type=trad -d category=paint -d height=0 -d width=0 -d feature=true
@@ -95,7 +95,7 @@ curl http://localhost:8080/art/add -d "title=Paper Study" -d "medium=Oil Paint" 
 curl http://localhost:8080/art/add -d "title=Space Still Life 1" -d "medium=Oil Paint" -d imgFull=spaceStillLife1.jpg -d imgComp=spaceStillLife1.jpg -d type=trad -d category=paint -d height=0 -d width=0 -d feature=false
 
 # Space Still Life 2
-curl http://localhost:8080/art/add -d "title=Space Still Life 2" -d "medium=Oil Paint" -d imgFull=spaceStillLife2.jpg -d imgComp=spaceStillLife2.jpg -d type=trad -d category=paint -d height=0 -d width=0 -d feature=false
+curl http://localhost:8080/art/add -d "title=Space Still Life 2" -d "medium=Oil Paint" -d imgFull=spaceStillLife2.jpg -d imgComp=spaceStillLife2.jpg -d type=trad -d category=paint -d height=0 -d width=0 -d feature=true
 
 # Spaced Out
 curl http://localhost:8080/art/add -d "title=Spaced Out" -d "medium=Oil Paint" -d imgFull=spacedOut.jpg -d imgComp=spacedOut.jpg -d type=trad -d category=paint -d height=0 -d width=0 -d feature=false
@@ -149,7 +149,7 @@ curl http://localhost:8080/art/add -d title=Vagulate -d "medium=Oil Paint" -d im
 curl http://localhost:8080/art/add -d "title=Turning Point" -d "medium=Acrylic Paint" -d imgFull=turningPoint.jpg -d imgComp=turningPoint.jpg -d type=trad -d category=paint -d height=0 -d width=0 -d feature=false
 
 # Mother
-curl http://localhost:8080/art/add -d title=Mother -d "medium=Oil Paint" -d imgFull=mother.jpg -d imgComp=mother.jpg -d type=trad -d category=paint -d height=0 -d width=0 -d feature=true
+curl http://localhost:8080/art/add -d title=Mother -d "medium=Oil Paint" -d imgFull=mother.jpg -d imgComp=mother.jpg -d type=trad -d category=paint -d height=0 -d width=0 -d feature=false
 
 
 # --=== DRAWINGS ===--
@@ -194,7 +194,7 @@ curl http://localhost:8080/art/add -d title=Kandinskeye -d "medium=Oil pens and 
 curl http://localhost:8080/art/add -d title=Coffee -d "medium=Colored Pencil" -d imgFull=coffee.jpg -d imgComp=coffee.jpg -d type=trad -d category=draw -d height=0 -d width=0 -d feature=false
 
 # Enchanted Tree
-curl http://localhost:8080/art/add -d "title=Enchanted Tree" -d "medium=Watercolor Pencils" -d imgFull=enchantedTree.jpg -d imgComp=enchantedTree.jpg -d type=trad -d category=draw -d height=0 -d width=0 -d feature=true
+curl http://localhost:8080/art/add -d "title=Enchanted Tree" -d "medium=Watercolor Pencils" -d imgFull=enchantedTree.jpg -d imgComp=enchantedTree.jpg -d type=trad -d category=draw -d height=0 -d width=0 -d feature=false
 
 # Self Portrait
 curl http://localhost:8080/art/add -d "title=Self Portrait" -d "medium=Ink and Colored Pencil" -d imgFull=selfPortrait.jpg -d imgComp=selfPortrait -d type=trad -d category=draw -d height=0 -d width=0 -d feature=false
