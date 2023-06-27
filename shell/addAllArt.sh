@@ -15,7 +15,28 @@ curl http://localhost:8080/art/add -d "title=SG Logo v2" -d medium=SVG -d imgFul
 # SG Logo v1
 curl http://localhost:8080/art/add -d "title=SG Logo v1" -d medium=SVG -d imgFull=SGlogoV1.svg -d imgComp=SGlogoV1.svg -d type=digi -d category=logo -d height=0 -d width=0 -d feature=false
 
+# CatalyXt Logo
+curl http://localhost:8080/art/add -d "title=CatalyXt Logo" -d medium=SVG -d imgFull=catalyXtLogo.png -d imgComp=catalyXtLogo.png -d type=digi -d category=logo -d height=0 -d width=0 -d feature=false
+
+# Kandinsky.Crypto Logo
+curl http://localhost:8080/art/add -d "title=Kandinsky.Crypto Logo" -d medium=SVG -d imgFull=kandinskyCryptoLogo.png -d imgComp=kandinskyCryptoLogo.png -d type=digi -d category=logo -d height=0 -d width=0 -d feature=false
+
+# Kandinsky.Crypto PFP
+curl http://localhost:8080/art/add -d "title=Kandinsky.Crypto PFP" -d medium=SVG -d imgFull=kandinskyCryptoPFP.png -d imgComp=kandinskyCryptoPFP.png -d type=digi -d category=logo -d height=0 -d width=0 -d feature=false
+
 # --=== COVER ART ===--
+
+# Behind These Eyes
+curl http://localhost:8080/art/add -d "title=Behind These Eyes" -d "medium=Krita and GIMP" -d imgFull=behindTheseEyes.png -d imgComp=behindTheseEyes.png -d type=digi -d category=cover -d height=0 -d width=0 -d feature=false
+
+# Zero Below
+curl http://localhost:8080/art/add -d "title=Zero Below" -d "medium=Oil Paint, Krita, and GIMP" -d imgFull=zeroBelow.png -d imgComp=zeroBelow.png -d type=digi -d category=cover -d height=0 -d width=0 -d feature=false
+
+# Parealustra
+curl http://localhost:8080/art/add -d title=Parealustra -d "medium=Krita and GIMP" -d imgFull=parealustra.png -d imgComp=parealustra.png -d type=digi -d category=cover -d height=0 -d width=0 -d feature=false
+
+# Silver Trees
+curl http://localhost:8080/art/add -d "title=Silver Trees" -d "medium=Krita and GIMP" -d imgFull=silverTrees.png -d imgComp=silverTrees.png -d type=digi -d category=cover -d height=0 -d width=0 -d feature=false
 
 # Two Broken Fingers
 curl http://localhost:8080/art/add -d "title=Two Broken Fingers" -d "medium=Oil Paint and Photoshop" -d imgFull=twoBrokenFingers.png -d imgComp=twoBrokenFingers.png -d type=digi -d category=cover -d height=0 -d width=0 -d feature=false
@@ -34,17 +55,50 @@ curl http://localhost:8080/art/add -d "title=loosing Control" -d "medium=Oil Pai
 # Chaos & Harmony
 curl http://localhost:8080/art/add -d "title=Chaos and Harmony" -d "medium=India Ink" -d imgFull=chaosHarmony.jpg -d imgComp=chaosHarmony.jpg -d type=trad -d category=paint -d height=0 -d width=0 -d feature=false
 
+# Mixed Emotions
+curl http://localhost:8080/art/add -d "title=Mixed Emotions" -d "medium=Oil Paint" -d imgFull=mixedEmotions.jpg -d imgComp=mixedEmotions.jpg -d type=trad -d category=paint -d height=0 -d width=0 -d feature=true
+
 # Sensation
 curl http://localhost:8080/art/add -d title=Sensation -d "medium=Watercolor and Gauche" -d imgFull=sensation.jpg -d imgComp=sensation.jpg -d type=trad -d category=paint -d height=0 -d width=0 -d feature=false
 
 # Lemon Daze
 curl http://localhost:8080/art/add -d "title=Lemon Daze" -d medium=Gauche -d imgFull=lemonDaze.jpg -d imgComp=lemonDaze.jpg -d type=trad -d category=paint -d height=0 -d width=0 -d feature=false
 
+# Blood Money
+curl http://localhost:8080/art/add -d "title=Blood Money" -d "medium=Oil Paint" -d imgFull=bloodMoney.jpg -d imgComp=bloodMoney.jpg -d type=trad -d category=paint -d height=0 -d width=0 -d feature=true
+
+# Wishy Washy
+curl http://localhost:8080/art/add -d "title=Wishy Washy" -d "medium=Oil Paint" -d imgFull=wishyWashy.jpg -d imgComp=wishyWashy.jpg -d type=trad -d category=paint -d height=0 -d width=0 -d feature=true
+
+# Pouring Out
+curl http://localhost:8080/art/add -d "title=Pouring Out" -d "medium=India Ink" -d imgFull=pouringOut.jpg -d imgComp=pouringOut.jpg -d type=trad -d category=paint -d height=0 -d width=0 -d feature=false
+
+# Still Life 4
+curl http://localhost:8080/art/add -d "title=Still Life 4" -d "medium=Oil Paint" -d imgFull=stillLife4.jpg -d imgComp=stillLife4.jpg -d type=trad -d category=paint -d height=0 -d width=0 -d feature=false
+
 # Lenitive
 curl http://localhost:8080/art/add -d title=Lenitive -d "medium=Oil Paint" -d imgFull=lenitive.jpg -d imgComp=lenitive.jpg -d type=trad -d category=paint -d height=0 -d width=0 -d feature=false
 
+# Angular Leaves
+curl http://localhost:8080/art/add -d "title=Angular Leaves" -d "medium=Oil Paint" -d imgFull=angularLeaves.jpg -d imgComp=angularLeaves.jpg -d type=trad -d category=paint -d height=0 -d width=0 -d feature=false
+
+# Garish Destruction
+curl http://localhost:8080/art/add -d "title=Garish Destruction" -d "medium=Oil Paint and Sawdust" -d imgFull=garishDestruction.jpg -d imgComp=garishDestruction.jpg -d type=trad -d category=paint -d height=0 -d width=0 -d feature=false
+
 # Muddy Waters
 curl http://localhost:8080/art/add -d "title=Muddy Waters" -d "medium=Oil & Acrylic Paint" -d imgFull=muddyWaters.jpg -d imgComp=muddyWaters.jpg -d type=trad -d category=paint -d height=0 -d width=0 -d feature=false
+
+# Paper Study
+curl http://localhost:8080/art/add -d "title=Paper Study" -d "medium=Oil Paint" -d imgFull=paperStudy.jpg -d imgComp=paperStudy.jpg -d type=trad -d category=paint -d height=0 -d width=0 -d feature=false
+
+# Space Still Life 1
+curl http://localhost:8080/art/add -d "title=Space Still Life 1" -d "medium=Oil Paint" -d imgFull=spaceStillLife1.jpg -d imgComp=spaceStillLife1.jpg -d type=trad -d category=paint -d height=0 -d width=0 -d feature=false
+
+# Space Still Life 2
+curl http://localhost:8080/art/add -d "title=Space Still Life 2" -d "medium=Oil Paint" -d imgFull=spaceStillLife2.jpg -d imgComp=spaceStillLife2.jpg -d type=trad -d category=paint -d height=0 -d width=0 -d feature=false
+
+# Spaced Out
+curl http://localhost:8080/art/add -d "title=Spaced Out" -d "medium=Oil Paint" -d imgFull=spacedOut.jpg -d imgComp=spacedOut.jpg -d type=trad -d category=paint -d height=0 -d width=0 -d feature=false
 
 # With Love
 curl http://localhost:8080/art/add -d "title=With Love" -d "medium=Oil Paint" -d imgFull=withLove.jpg -d imgComp=withLove.jpg -d type=trad -d category=paint -d height=0 -d width=0 -d feature=false
@@ -61,14 +115,26 @@ curl http://localhost:8080/art/add -d "title=Regret (pre-photoshop)" -d "medium=
 # Regret (alternate)
 curl http://localhost:8080/art/add -d "title=Regret (alternate)" -d "medium=Oil Paint" -d imgFull=regretAlt.jpg -d imgComp=regretAlt.jpg -d type=trad -d category=paint -d height=0 -d width=0 -d feature=false
 
+# Parealustra (pre-photoshop)
+curl http://localhost:8080/art/add -d "title=Parealustra (pre-photoshop)" -d "medium=Oil Paint" -d imgFull=parealustraPre.jpg -d imgComp=parealustraPre.jpg -d type=trad -d category=paint -d height=0 -d width=0 -d feature=false
+
 # Lämp
 curl http://localhost:8080/art/add -d title=Lämp -d "medium=Acrylic Paint" -d imgFull=lamp.png -d imgComp=lamp.png -d type=trad -d category=paint -d height=0 -d width=0 -d feature=false
+
+# Cowboy
+curl http://localhost:8080/art/add -d title=Cowboy -d "medium=India Ink" -d imgFull=cowboy.jpg -d imgComp=cowboy.jpg -d type=trad -d category=paint -d height=0 -d width=0 -d feature=false
+
+# Implicated
+curl http://localhost:8080/art/add -d title=Implicated -d "medium=India Ink" -d imgFull=implicated.jpg -d imgComp=implicated.jpg -d type=trad -d category=paint -d height=0 -d width=0 -d feature=false
 
 # Still Life 2
 curl http://localhost:8080/art/add -d "title=Still Life 2" -d "medium=Oil Paint" -d imgFull=stillLife2.png -d imgComp=stillLife2.png -d type=trad -d category=paint -d height=0 -d width=0 -d feature=false
 
 # Outo
 curl http://localhost:8080/art/add -d title=Outo -d "medium=India Ink" -d imgFull=outo.png -d imgComp=outo.png -d type=trad -d category=paint -d height=0 -d width=0 -d feature=false
+
+# Mt. Hood
+curl http://localhost:8080/art/add -d "title=Mt. Hood" -d "medium=India Ink" -d imgFull=mtHood.jpg -d imgComp=mtHood.jpg -d type=trad -d category=paint -d height=0 -d width=0 -d feature=false
 
 # Skyliner
 curl http://localhost:8080/art/add -d title=Skyliner -d medium=Watercolor -d imgFull=skyliner.png -d imgComp=skyliner.png -d type=trad -d category=paint -d height=0 -d width=0 -d feature=false
@@ -91,6 +157,9 @@ curl http://localhost:8080/art/add -d title=Mother -d "medium=Oil Paint" -d imgF
 # Iridal
 curl http://localhost:8080/art/add -d title=Iridal -d medium=Chalk -d imgFull=iridal.jpg -d imgComp=iridal.jpg -d type=trad -d category=draw -d height=0 -d width=0 -d feature=false
 
+# Still Life 5
+curl http://localhost:8080/art/add -d "title=Still Life 5" -d "medium=Watercolor Pencils" -d imgFull=stillLife5.jpg -d imgComp=stillLife5.jpg -d type=trad -d category=draw -d height=0 -d width=0 -d feature=false
+
 # Snake Eyes
 curl http://localhost:8080/art/add -d "title=Snake Eyes" -d "medium=Colored Pencils" -d imgFull=snakeEyes.jpg -d imgComp=snakeEyes.jpg -d type=trad -d category=draw -d height=0 -d width=0 -d feature=false
 
@@ -106,11 +175,11 @@ curl http://localhost:8080/art/add -d title=Besties -d "medium=Oil Pens" -d imgF
 # Headlines
 curl http://localhost:8080/art/add -d title=Headlines -d "medium=Oil Pens and Markers" -d imgFull=headlines.jpg -d imgComp=headline.jpg -d type=trad -d category=draw -d height=0 -d width=0 -d feature=false
 
-#Dark Times
+# Dark Times
 curl http://localhost:8080/art/add -d "title=Dark Times" -d "medium=Oil Pens and Markers" -d imgFull=darkTimes.jpg -d imgComp=darkTimes.jpg -d type=trad -d category=draw -d height=0 -d width=0 -d feature=false
 
 # LUV
-curl http://localhost:8080/art/add -d title=LUV -d "medium=Oil Pens and Markers" -d imgFull=luv.jpg -d imgComp=luv.jpg -d type=trad -d category=draw -d height=0 -d width=0 -d feature=true
+curl http://localhost:8080/art/add -d title=LUV -d "medium=Oil Pens and Markers" -d imgFull=luv.jpg -d imgComp=luv.jpg -d type=trad -d category=draw -d height=0 -d width=0 -d feature=false
 
 # Fierce
 curl http://localhost:8080/art/add -d title=Fierce -d "medium=Oil Pens" -d imgFull=fierce.jpg -d imgComp=fierce -d type=trad -d category=draw -d height=0 -d width=0 -d feature=false
@@ -121,6 +190,12 @@ curl http://localhost:8080/art/add -d "title=Bright Eyed" -d "medium=Oil pens" -
 # Kandinskeye
 curl http://localhost:8080/art/add -d title=Kandinskeye -d "medium=Oil pens and Markers" -d imgFull=kandinskeye.jpg -d imgComp=kandinskeye.jpg -d type=trad -d category=draw -d height=0 -d width=0 -d feature=false
 
+# Coffee
+curl http://localhost:8080/art/add -d title=Coffee -d "medium=Colored Pencil" -d imgFull=coffee.jpg -d imgComp=coffee.jpg -d type=trad -d category=draw -d height=0 -d width=0 -d feature=false
+
+# Enchanted Tree
+curl http://localhost:8080/art/add -d "title=Enchanted Tree" -d "medium=Watercolor Pencils" -d imgFull=enchantedTree.jpg -d imgComp=enchantedTree.jpg -d type=trad -d category=draw -d height=0 -d width=0 -d feature=true
+
 # Self Portrait
 curl http://localhost:8080/art/add -d "title=Self Portrait" -d "medium=Ink and Colored Pencil" -d imgFull=selfPortrait.jpg -d imgComp=selfPortrait -d type=trad -d category=draw -d height=0 -d width=0 -d feature=false
 
@@ -129,6 +204,12 @@ curl http://localhost:8080/art/add -d "title=Still Life 1" -d "medium=Colored Pe
 
 # Arm Anatomy
 curl http://localhost:8080/art/add -d "title=Arm Anatomy" -d medium=Pen -d imgFull=armAnatomy.png -d imgComp=armAnatomy.png -d type=trad -d category=draw -d height=0 -d width=0 -d feature=false
+
+# Doodle
+curl http://localhost:8080/art/add -d title=Doodle -d medium=Graphite -d imgFull=doodle.jpg -d imgComp=doodle.jpg -d type=trad -d category=draw -d height=0 -d width=0 -d feature=false
+
+# I.M.Y.J.
+curl http://localhost:8080/art/add -d "title=I.M.Y.J." -d medium=Ink -d imgFull=imyj.jpg -d imgComp=imyj.jpg -d type=trad -d category=draw -d height=0 -d width=0 -d feature=false
 
 # Metallic Study 1
 curl http://localhost:8080/art/add -d "title=Metallic Study 1" -d "medium=Colored Pencil" -d imgFull=metallicStudy1.jpg -d imgComp=metallicStudy1.jpg -d type=trad -d category=draw -d height=0 -d width=0 -d feature=false
@@ -142,6 +223,9 @@ curl http://localhost:8080/art/add -d "title=All Around" -d "medium=Colored Penc
 # Light Study
 curl http://localhost:8080/art/add -d "title=Light Study" -d "medium=Graphite and Colored Pencil" -d imgFull=lightStudy.jpg -d imgComp=lightStudy.jpg -d type=trad -d category=draw -d height=0 -d width=0 -d feature=false
 
+# Watercolor Pencil Study
+curl http://localhost:8080/art/add -d "title=Watercolor Pencil Study" -d "medium=Watercolor Pencil" -d imgFull=watercolorPencilStudy.jpg -d imgComp=watercolorPencilStudy.jpg -d type=trad -d category=draw -d height=0 -d width=0 -d feature=false
+
 # Redrun
 curl http://localhost:8080/art/add -d title=Redrun -d medium=Ink -d imgFull=redrun.jpg -d imgComp=redrun.jpg -d type=trad -d category=draw -d height=0 -d width=0 -d feature=false
 
@@ -151,8 +235,8 @@ curl http://localhost:8080/art/add -d title=Adventure -d medium=Graphite -d imgF
 #Balance
 curl http://localhost:8080/art/add -d title=Balance -d medium=Ink -d imgFull=balance.jpg -d imgComp=balance.jpg -d type=trad -d category=draw -d height=0 -d width=0 -d feature=false
 
-# Abstract Self Portrait
-curl http://localhost:8080/art/add -d "title=Abstract Self Portrait" -d medium=Graphite -d imgFull=abstractSelfPortrait.jpg -d imgComp=abstractSelfPortrait.jpg -d type=trad -d category=draw -d height=0 -d width=0 -d feature=false
+# Abstract Self Portrait WIP
+curl http://localhost:8080/art/add -d "title=Abstract Self Portrait (WIP)" -d medium=Graphite -d imgFull=abstractSelfPortraitPre.jpg -d imgComp=abstractSelfPortraitPre.jpg -d type=trad -d category=draw -d height=0 -d width=0 -d feature=false
 
 # Old Self Portrait
 curl http://localhost:8080/art/add -d "title=Old Self Portrait" -d medium=Graphite -d imgFull=oldSelfPortrait.jpg -d imgComp=oldSelfPortrait.jpg -d type=trad -d category=draw -d height=0 -d width=0 -d feature=false
@@ -173,8 +257,10 @@ curl http://localhost:8080/art/add -d title=Mountains -d "medium=Oil Pastel" -d 
 curl http://localhost:8080/art/add -d "title=Nikes on My Feet" -d medium=Graphite -d imgFull=nikesOnMyFeet.jpg -d imgComp=nikesOnMyFeet.jpg -d type=trad -d category=draw -d height=0 -d width=0 -d feature=false
 
 
-
 # --=== OTHER ART ===--
+
+# Abstract Self Portrait
+curl http://localhost:8080/art/add -d "title=Abstract Self Portrait" -d medium=Collage -d imgFull=abstractSelfPortrait.jpg -d imgComp=abstractSelfPortrait.jpg -d type=trad -d category=other -d height=0 -d width=0 -d feature=false
 
 # Tortuous
 curl http://localhost:8080/art/add -d title=tortuous -d medium=Ceramic -d imgFull=tortuous.jpg -d imgComp=tortuous.jpg -d type=trad -d category=other -d height=0 -d width=0 -d feature=false
@@ -187,6 +273,9 @@ curl http://localhost:8080/art/add -d "title=Ryan (print)" -d "medium=Linoleum P
 
 # Ryan (carving)
 curl http://localhost:8080/art/add -d "title=Ryan (carving)" -d "medium=Linoleum Carving" -d imgFull=ryanCarving.jpg -d imgComp=ryanCarving.jpg -d type=trad -d category=other -d height=0 -d width=0 -d feature=false
+
+# Squirrelly
+curl http://localhost:8080/art/add -d title=Squirrelly -d medium=Collage -d imgFull=squirrelly.jpg -d imgComp=squirrelly.jpg -d type=trad -d category=other -d height=0 -d width=0 -d feature=false
 
 # Broché
 curl http://localhost:8080/art/add -d title=Broché -d medium=Collage -d imgFull=broche.jpg -d imgComp=broche.jpg -d type=trad -d category=other -d height=0 -d width=0 -d feature=false
