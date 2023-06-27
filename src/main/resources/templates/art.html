@@ -126,9 +126,11 @@
                     <th:block th:replace="~{fragments/art :: card}"></th:block>
                 </div>
             </div>
-            <button class="btn btn-outline-danger mb-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLogo" aria-expanded="false" aria-controls="collapseLogo">
-                <h3 class="ms-auto me-auto">Close</h3>
-            </button>
+            <div class="d-grid m-4 mt-0">
+                <button class="btn btn-outline-danger" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLogo" aria-expanded="false" aria-controls="collapseLogo">
+                    <h4>Close</h4>
+                </button>
+            </div>
         </div>
 
         <!-- COVER ART -->
@@ -140,6 +142,11 @@
                 <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4 mason-item" style="position: absolute; left: 0%; top: 0px;" th:each="art : ${covers}">
                     <th:block th:replace="~{fragments/art :: card}"></th:block>
                 </div>
+            </div>
+            <div class="d-grid m-4 mt-0">
+                <button class="btn btn-outline-danger" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCover" aria-expanded="false" aria-controls="collapseCover">
+                    <h4>Close</h4>
+                </button>
             </div>
         </div>
 
@@ -156,6 +163,11 @@
                     <th:block th:replace="~{fragments/art :: card}"></th:block>
                 </div>
             </div>
+            <div class="d-grid m-4 mt-0">
+                <button class="btn btn-outline-danger" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePaint" aria-expanded="false" aria-controls="collapsePaint">
+                    <h4>Close</h4>
+                </button>
+            </div>
         </div>
 
 
@@ -169,6 +181,11 @@
                     <th:block th:replace="~{fragments/art :: card}"></th:block>
                 </div>
             </div>
+            <div class="d-grid m-4 mt-0">
+                <button class="btn btn-outline-danger" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDraw" aria-expanded="false" aria-controls="collapseDraw">
+                    <h4>Close</h4>
+                </button>
+            </div>
         </div>
 
         <!-- OTHER -->
@@ -180,6 +197,11 @@
                 <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4 mason-item" style="position: absolute; left: 0%; top: 0px;" th:each="art : ${others}">
                     <th:block th:replace="~{fragments/art :: card}"></th:block>
                 </div>
+            </div>
+            <div class="d-grid m-4 mt-0">
+                <button class="btn btn-outline-danger" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOther" aria-expanded="false" aria-controls="collapseOther">
+                    <h4>Close</h4>
+                </button>
             </div>
         </div>
 
