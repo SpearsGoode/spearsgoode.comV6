@@ -8,7 +8,7 @@
     FIXME:  and add link to full resolution image.
     -->
     <div th:fragment="card" class="card bg-light">
-        <img class="card-img-top" th:src="@{'/art/full/' + ${art.imgFull}}" th:alt="@{${art.title} + ' - ' + ${art.medium} + ' by Spears Goode'}">
+        <img class="card-img-top" th:src="@{'/art/comp/' + ${art.imgComp}}" th:alt="@{${art.title} + ' - ' + ${art.medium} + ' by Spears Goode'}">
         <div class="card-body">
             <h5 class="card-title" th:text="${art.title}"></h5>
             <p class="card-text" th:text="@{${art.medium} + ' |  ID: ' + ${art.id}}"></p>
