@@ -4,11 +4,13 @@ import com.spearsgoode.interfaces.ArtRepo;
 import com.spearsgoode.interfaces.ProjectRepo;
 import com.spearsgoode.models.Art;
 import com.spearsgoode.models.Project;
+import com.spearsgoode.security.SecurityConfig;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.context.annotation.Import;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
@@ -18,6 +20,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @WebMvcTest(ArtController.class)
+@Import(SecurityConfig.class)
 public class ArtControllerTest {
 
     @Autowired
