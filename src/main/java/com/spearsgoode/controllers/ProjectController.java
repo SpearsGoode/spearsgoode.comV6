@@ -13,6 +13,7 @@ public class ProjectController {
     @Autowired
     private ProjectRepo projectRepo;
 
+    // Handles POST requests for adding a new project
     @PostMapping(path="/add")
     public @ResponseBody String addNewProject(
             @RequestParam String title,
@@ -29,13 +30,15 @@ public class ProjectController {
         return "Saved";
     }
 
+    // Handles POST requests for deleting a project by ID
     @PostMapping(path="/delete")
     public @ResponseBody String deleteProject(@RequestParam Integer id) {
-        if (id == 0) projectRepo.deleteAll();
+        if (id == 0) projectRepo.deleteAll();   // delete all if id=0
         else projectRepo.deleteById(id);
         return "Deleted";
     }
 
+    // Handles GET requests for displaying all projects
     @GetMapping
     public String getAttributes(Model model) {
         Iterable<Project> projects = projectRepo.findAll();

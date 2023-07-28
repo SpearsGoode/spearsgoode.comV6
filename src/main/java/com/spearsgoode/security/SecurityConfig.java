@@ -1,6 +1,5 @@
 package com.spearsgoode.security;
 
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -17,11 +16,14 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 public class SecurityConfig {
 
+    public static final String USER = "USER";
+    public static final String ADMIN = "ADMIN";
+
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests((requests) -> requests
-                        .requestMatchers("/admin/**", "/art/add", "/art/delete", "/projects/add", "/projects/delete").hasRole("ADMIN")
+                        .requestMatchers("/admin/**", "/art/add", "/art/delete", "/projects/add", "/projects/delete").hasRole(ADMIN)
                         .requestMatchers("/", "/art", "/projects", "/art/**", "/css/**", "/img/**", "/js/**", "/node_modules/**", "/pdf/**").permitAll() //FIXME fix art name conflict
                         .anyRequest().authenticated()
                 )
@@ -44,13 +46,13 @@ public class SecurityConfig {
         UserDetails user = User.builder()               //USER
                 .username("user")
                 .password(passwordEncoder().encode("password"))
-                .roles("USER")
+                .roles(USER)
                 .build();
 
         UserDetails admin = User.builder()              //ADMIN
                 .username("admin")
                 .password(passwordEncoder().encode("password"))
-                .roles("ADMIN")
+                .roles(ADMIN)
                 .build();
 
         return new InMemoryUserDetailsManager(user, admin);

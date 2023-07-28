@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.spearsgoode</groupId>
 	<artifactId>spearsgoode-site</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>6.1-SNAPSHOT</version>
 	<name>SpearsGoode Website</name>
 	<description>Spears Goode Personal Site</description>
 	<properties>

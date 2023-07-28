@@ -22,6 +22,7 @@ public class ArtController {
     @Autowired
     private ArtRepo artRepo;
 
+    // Handles POST requests to add new art
     @PostMapping(path="/add")
     public @ResponseBody String addNewArt(
             @RequestParam String title,
@@ -39,20 +40,28 @@ public class ArtController {
         return "Saved";
     }
 
+    // Handles the POST request to delete art by ID
     @PostMapping(path="/delete")
     public @ResponseBody String deleteArt(@RequestParam Integer id) {
-        if (id == 0) artRepo.deleteAll();
+        if (id == 0) artRepo.deleteAll();   // delete all if id=0
         else artRepo.deleteById(id);
         return "Deleted";
     }
 
+    /* FIXME update to work w/o hard coded categories
+       FIXME add dynamic categories to navigation?
+    */
+    // Handles GET requests for displaying all art
     @GetMapping
     public String getAttributes(Model model) {
+        // Get all projects and add as attribute (for navigation)
         Iterable<Project> projects = projectRepo.findAll();
         model.addAttribute("projects", projects);
 
-        // get all art & init sub lists
+        // get all art
         Iterable<Art> allArt = artRepo.findAll();
+
+        // init sub lists for each category
         ArrayList<Art> featured = new ArrayList<Art>();
         ArrayList<Art> paintings = new ArrayList<Art>();
         ArrayList<Art> drawings = new ArrayList<Art>();
@@ -71,7 +80,6 @@ public class ArtController {
         }
 
         // add sub lists as attributes
-
         model.addAttribute("featured", featured);
         model.addAttribute("paintings", paintings);
         model.addAttribute("drawings", drawings);
