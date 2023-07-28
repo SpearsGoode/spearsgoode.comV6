@@ -4,7 +4,7 @@
 # curl http://localhost:8080/art/add -d title=x -d medium=x -d imgFull=x -d imgComp=x -d type=x -d category=x -d height=0 -d width=0 -d feature=false
 
 # Test Image
-# curl http://localhost:8080/art/add -d "title=Test Image" -d medium=screenshot -d imgFull=testImg.png -d imgComp=testImgComp.png -d "type=print screen" -d category=digital -d height=750 -d width=631 -d feature=True
+# curl http://localhost:8080/art/add -d "title=Test Image" -d medium=screenshot -d imgFull=testImg.png -d imgComp=testImgComp.jpg -d "type=print screen" -d category=digital -d height=750 -d width=631 -d feature=True
 
 
 # --=== LOGOS ===--
@@ -16,41 +16,41 @@ curl http://localhost:8080/art/add -d "title=SG Logo v2" -d medium=SVG -d imgFul
 curl http://localhost:8080/art/add -d "title=SG Logo v1" -d medium=SVG -d imgFull=SGlogoV1.svg -d imgComp=SGlogoV1.svg -d type=digi -d category=logo -d height=0 -d width=0 -d feature=false
 
 # CatalyXt Logo
-curl http://localhost:8080/art/add -d "title=CatalyXt Logo" -d medium=SVG -d imgFull=catalyXtLogo.png -d imgComp=catalyXtLogo.png -d type=digi -d category=logo -d height=0 -d width=0 -d feature=false
+curl http://localhost:8080/art/add -d "title=CatalyXt Logo" -d medium=SVG -d imgFull=catalyXtLogo.png -d imgComp=catalyXtLogo.jpg -d type=digi -d category=logo -d height=0 -d width=0 -d feature=false
 
 # Kandinsky.Crypto Logo
-curl http://localhost:8080/art/add -d "title=Kandinsky.Crypto Logo" -d medium=SVG -d imgFull=kandinskyCryptoLogo.png -d imgComp=kandinskyCryptoLogo.png -d type=digi -d category=logo -d height=0 -d width=0 -d feature=false
+curl http://localhost:8080/art/add -d "title=Kandinsky.Crypto Logo" -d medium=SVG -d imgFull=kandinskyCryptoLogo.png -d imgComp=kandinskyCryptoLogo.jpg -d type=digi -d category=logo -d height=0 -d width=0 -d feature=false
 
 # Kandinsky.Crypto PFP
-curl http://localhost:8080/art/add -d "title=Kandinsky.Crypto PFP" -d medium=SVG -d imgFull=kandinskyCryptoPFP.png -d imgComp=kandinskyCryptoPFP.png -d type=digi -d category=logo -d height=0 -d width=0 -d feature=false
+curl http://localhost:8080/art/add -d "title=Kandinsky.Crypto PFP" -d medium=SVG -d imgFull=kandinskyCryptoPFP.png -d imgComp=kandinskyCryptoPFP.jpg -d type=digi -d category=logo -d height=0 -d width=0 -d feature=false
 
 # --=== COVER ART ===--
 
 # Behind These Eyes
-curl http://localhost:8080/art/add -d "title=Behind These Eyes" -d "medium=Krita and GIMP" -d imgFull=behindTheseEyes.png -d imgComp=behindTheseEyes.png -d type=digi -d category=cover -d height=0 -d width=0 -d feature=false
+curl http://localhost:8080/art/add -d "title=Behind These Eyes" -d "medium=Krita and GIMP" -d imgFull=behindTheseEyes.png -d imgComp=behindTheseEyes.jpg -d type=digi -d category=cover -d height=0 -d width=0 -d feature=false
 
 # Zero Below
-curl http://localhost:8080/art/add -d "title=Zero Below" -d "medium=Oil Paint, Krita, and GIMP" -d imgFull=zeroBelow.png -d imgComp=zeroBelow.png -d type=digi -d category=cover -d height=0 -d width=0 -d feature=false
+curl http://localhost:8080/art/add -d "title=Zero Below" -d "medium=Oil Paint, Krita, and GIMP" -d imgFull=zeroBelow.png -d imgComp=zeroBelow.jpg -d type=digi -d category=cover -d height=0 -d width=0 -d feature=false
 
 # Parealustra
-curl http://localhost:8080/art/add -d title=Parealustra -d "medium=Krita and GIMP" -d imgFull=parealustra.png -d imgComp=parealustra.png -d type=digi -d category=cover -d height=0 -d width=0 -d feature=false
+curl http://localhost:8080/art/add -d title=Parealustra -d "medium=Krita and GIMP" -d imgFull=parealustra.png -d imgComp=parealustra.jpg -d type=digi -d category=cover -d height=0 -d width=0 -d feature=false
 
 # Silver Trees
-curl http://localhost:8080/art/add -d "title=Silver Trees" -d "medium=Krita and GIMP" -d imgFull=silverTrees.png -d imgComp=silverTrees.png -d type=digi -d category=cover -d height=0 -d width=0 -d feature=false
+curl http://localhost:8080/art/add -d "title=Silver Trees" -d "medium=Krita and GIMP" -d imgFull=silverTrees.png -d imgComp=silverTrees.jpg -d type=digi -d category=cover -d height=0 -d width=0 -d feature=false
 
 # Two Broken Fingers
-curl http://localhost:8080/art/add -d "title=Two Broken Fingers" -d "medium=Oil Paint and Photoshop" -d imgFull=twoBrokenFingers.png -d imgComp=twoBrokenFingers.png -d type=digi -d category=cover -d height=0 -d width=0 -d feature=false
+curl http://localhost:8080/art/add -d "title=Two Broken Fingers" -d "medium=Oil Paint and Photoshop" -d imgFull=twoBrokenFingers.png -d imgComp=twoBrokenFingers.jpg -d type=digi -d category=cover -d height=0 -d width=0 -d feature=false
 
 # Rise Up
-curl http://localhost:8080/art/add -d "title=Rise Up" -d "medium=Oil Paint and Photoshop" -d imgFull=riseUp.png -d imgComp=riseUp.png -d type=digi -d category=cover -d height=0 -d width=0 -d feature=false
+curl http://localhost:8080/art/add -d "title=Rise Up" -d "medium=Oil Paint and Photoshop" -d imgFull=riseUp.png -d imgComp=riseUp.jpg -d type=digi -d category=cover -d height=0 -d width=0 -d feature=false
 
 # Regret
-curl http://localhost:8080/art/add -d title=Regret -d "medium=Oil Paint and Photoshop" -d imgFull=regret.png -d imgComp=regret.png -d type=digi -d category=cover -d height=0 -d width=0 -d feature=false
+curl http://localhost:8080/art/add -d title=Regret -d "medium=Oil Paint and Photoshop" -d imgFull=regret.png -d imgComp=regret.jpg -d type=digi -d category=cover -d height=0 -d width=0 -d feature=false
 
     # --=== PAINTINGS ===--
 
 # Loosing Control
-curl http://localhost:8080/art/add -d "title=loosing Control" -d "medium=Oil Paint" -d imgFull=loosingControl.jpg -d imgComp=loosingControl.jpg -d type=trad -d category=paint -d height=0 -d width=0 -d feature=false
+curl http://localhost:8080/art/add -d "title=Loosing Control" -d "medium=Oil Paint" -d imgFull=loosingControl.jpg -d imgComp=loosingControl.jpg -d type=trad -d category=paint -d height=0 -d width=0 -d feature=false
 
 # Chaos & Harmony
 curl http://localhost:8080/art/add -d "title=Chaos and Harmony" -d "medium=India Ink" -d imgFull=chaosHarmony.jpg -d imgComp=chaosHarmony.jpg -d type=trad -d category=paint -d height=0 -d width=0 -d feature=false
@@ -104,7 +104,7 @@ curl http://localhost:8080/art/add -d "title=Spaced Out" -d "medium=Oil Paint" -
 curl http://localhost:8080/art/add -d "title=With Love" -d "medium=Oil Paint" -d imgFull=withLove.jpg -d imgComp=withLove.jpg -d type=trad -d category=paint -d height=0 -d width=0 -d feature=false
 
 # Rise Up (pre-photoshop)
-curl http://localhost:8080/art/add -d "title=Rise Up (pre-photoshop)" -d "medium=Oil Paint" -d imgFull=riseUpPre.jpg -d imgComp=riseUpPre,jpg -d type=trad -d category=paint -d height=0 -d width=0 -d feature=false
+curl http://localhost:8080/art/add -d "title=Rise Up (pre-photoshop)" -d "medium=Oil Paint" -d imgFull=riseUpPre.jpg -d imgComp=riseUpPre.jpg -d type=trad -d category=paint -d height=0 -d width=0 -d feature=false
 
 # Two Broken Fingers (pre-photoshop)
 curl http://localhost:8080/art/add -d "title=Two Broken Fingers (pre-photoshop)" -d "medium=Oil Paint" -d imgFull=twoBrokenFingersPre.jpg -d imgComp=twoBrokenFingersPre.jpg -d type=trad -d category=paint -d height=0 -d width=0 -d feature=false
@@ -119,7 +119,7 @@ curl http://localhost:8080/art/add -d "title=Regret (alternate)" -d "medium=Oil 
 curl http://localhost:8080/art/add -d "title=Parealustra (pre-photoshop)" -d "medium=Oil Paint" -d imgFull=parealustraPre.jpg -d imgComp=parealustraPre.jpg -d type=trad -d category=paint -d height=0 -d width=0 -d feature=false
 
 # Lämp
-curl http://localhost:8080/art/add -d title=Lämp -d "medium=Acrylic Paint" -d imgFull=lamp.png -d imgComp=lamp.png -d type=trad -d category=paint -d height=0 -d width=0 -d feature=false
+curl http://localhost:8080/art/add -d title=Lämp -d "medium=Acrylic Paint" -d imgFull=lamp.png -d imgComp=lamp.jpg -d type=trad -d category=paint -d height=0 -d width=0 -d feature=false
 
 # Cowboy
 curl http://localhost:8080/art/add -d title=Cowboy -d "medium=India Ink" -d imgFull=cowboy.jpg -d imgComp=cowboy.jpg -d type=trad -d category=paint -d height=0 -d width=0 -d feature=false
@@ -128,22 +128,22 @@ curl http://localhost:8080/art/add -d title=Cowboy -d "medium=India Ink" -d imgF
 curl http://localhost:8080/art/add -d title=Implicated -d "medium=India Ink" -d imgFull=implicated.jpg -d imgComp=implicated.jpg -d type=trad -d category=paint -d height=0 -d width=0 -d feature=false
 
 # Still Life 2
-curl http://localhost:8080/art/add -d "title=Still Life 2" -d "medium=Oil Paint" -d imgFull=stillLife2.png -d imgComp=stillLife2.png -d type=trad -d category=paint -d height=0 -d width=0 -d feature=false
+curl http://localhost:8080/art/add -d "title=Still Life 2" -d "medium=Oil Paint" -d imgFull=stillLife2.png -d imgComp=stillLife2.jpg -d type=trad -d category=paint -d height=0 -d width=0 -d feature=false
 
 # Outo
-curl http://localhost:8080/art/add -d title=Outo -d "medium=India Ink" -d imgFull=outo.png -d imgComp=outo.png -d type=trad -d category=paint -d height=0 -d width=0 -d feature=false
+curl http://localhost:8080/art/add -d title=Outo -d "medium=India Ink" -d imgFull=outo.png -d imgComp=outo.jpg -d type=trad -d category=paint -d height=0 -d width=0 -d feature=false
 
 # Mt. Hood
 curl http://localhost:8080/art/add -d "title=Mt. Hood" -d "medium=India Ink" -d imgFull=mtHood.jpg -d imgComp=mtHood.jpg -d type=trad -d category=paint -d height=0 -d width=0 -d feature=false
 
 # Skyliner
-curl http://localhost:8080/art/add -d title=Skyliner -d medium=Watercolor -d imgFull=skyliner.png -d imgComp=skyliner.png -d type=trad -d category=paint -d height=0 -d width=0 -d feature=false
+curl http://localhost:8080/art/add -d title=Skyliner -d medium=Watercolor -d imgFull=skyliner.png -d imgComp=skyliner.jpg -d type=trad -d category=paint -d height=0 -d width=0 -d feature=false
 
 # Kismet
-curl http://localhost:8080/art/add -d title=Kismet -d medium=Watercolor -d imgFull=kismet.png -d imgComp=kismet.png -d type=trad -d category=paint -d height=0 -d width=0 -d feature=false
+curl http://localhost:8080/art/add -d title=Kismet -d medium=Watercolor -d imgFull=kismet.png -d imgComp=kismet.jpg -d type=trad -d category=paint -d height=0 -d width=0 -d feature=false
 
 # Vagulate
-curl http://localhost:8080/art/add -d title=Vagulate -d "medium=Oil Paint" -d imgFull=vagulate.png -d imgComp=vagulate.png -d type=trad -d category=paint -d height=0 -d width=0 -d feature=false
+curl http://localhost:8080/art/add -d title=Vagulate -d "medium=Oil Paint" -d imgFull=vagulate.png -d imgComp=vagulate.jpg -d type=trad -d category=paint -d height=0 -d width=0 -d feature=false
 
 # Turning Point
 curl http://localhost:8080/art/add -d "title=Turning Point" -d "medium=Acrylic Paint" -d imgFull=turningPoint.jpg -d imgComp=turningPoint.jpg -d type=trad -d category=paint -d height=0 -d width=0 -d feature=false
@@ -173,7 +173,7 @@ curl http://localhost:8080/art/add -d title=Genesis -d "medium=Oil Pens" -d imgF
 curl http://localhost:8080/art/add -d title=Besties -d "medium=Oil Pens" -d imgFull=besties.jpg -d imgComp=besties.jpg -d type=trad -d category=draw -d height=0 -d width=0 -d feature=false
 
 # Headlines
-curl http://localhost:8080/art/add -d title=Headlines -d "medium=Oil Pens and Markers" -d imgFull=headlines.jpg -d imgComp=headline.jpg -d type=trad -d category=draw -d height=0 -d width=0 -d feature=false
+curl http://localhost:8080/art/add -d title=Headlines -d "medium=Oil Pens and Markers" -d imgFull=headlines.jpg -d imgComp=headlines.jpg -d type=trad -d category=draw -d height=0 -d width=0 -d feature=false
 
 # Dark Times
 curl http://localhost:8080/art/add -d "title=Dark Times" -d "medium=Oil Pens and Markers" -d imgFull=darkTimes.jpg -d imgComp=darkTimes.jpg -d type=trad -d category=draw -d height=0 -d width=0 -d feature=false
@@ -182,10 +182,10 @@ curl http://localhost:8080/art/add -d "title=Dark Times" -d "medium=Oil Pens and
 curl http://localhost:8080/art/add -d title=LUV -d "medium=Oil Pens and Markers" -d imgFull=luv.jpg -d imgComp=luv.jpg -d type=trad -d category=draw -d height=0 -d width=0 -d feature=false
 
 # Fierce
-curl http://localhost:8080/art/add -d title=Fierce -d "medium=Oil Pens" -d imgFull=fierce.jpg -d imgComp=fierce -d type=trad -d category=draw -d height=0 -d width=0 -d feature=false
+curl http://localhost:8080/art/add -d title=Fierce -d "medium=Oil Pens" -d imgFull=fierce.jpg -d imgComp=fierce.jpg -d type=trad -d category=draw -d height=0 -d width=0 -d feature=false
 
 # Bright Eyed
-curl http://localhost:8080/art/add -d "title=Bright Eyed" -d "medium=Oil pens" -d imgFull=brightEyed.jpg -d imgComp=brighteyed.jpg -d type=trad -d category=draw -d height=0 -d width=0 -d feature=false
+curl http://localhost:8080/art/add -d "title=Bright Eyed" -d "medium=Oil pens" -d imgFull=brightEyed.jpg -d imgComp=brightEyed.jpg -d type=trad -d category=draw -d height=0 -d width=0 -d feature=false
 
 # Kandinskeye
 curl http://localhost:8080/art/add -d title=Kandinskeye -d "medium=Oil pens and Markers" -d imgFull=kandinskeye.jpg -d imgComp=kandinskeye.jpg -d type=trad -d category=draw -d height=0 -d width=0 -d feature=false
@@ -197,13 +197,13 @@ curl http://localhost:8080/art/add -d title=Coffee -d "medium=Colored Pencil" -d
 curl http://localhost:8080/art/add -d "title=Enchanted Tree" -d "medium=Watercolor Pencils" -d imgFull=enchantedTree.jpg -d imgComp=enchantedTree.jpg -d type=trad -d category=draw -d height=0 -d width=0 -d feature=false
 
 # Self Portrait
-curl http://localhost:8080/art/add -d "title=Self Portrait" -d "medium=Ink and Colored Pencil" -d imgFull=selfPortrait.jpg -d imgComp=selfPortrait -d type=trad -d category=draw -d height=0 -d width=0 -d feature=false
+curl http://localhost:8080/art/add -d "title=Self Portrait" -d "medium=Ink and Colored Pencil" -d imgFull=selfPortrait.jpg -d imgComp=selfPortrait.jpg -d type=trad -d category=draw -d height=0 -d width=0 -d feature=false
 
 # Still Life 1
-curl http://localhost:8080/art/add -d "title=Still Life 1" -d "medium=Colored Pencils" -d imgFull=stillLife1.png -d imgComp=stillLife1.png -d type=trad -d category=draw -d height=0 -d width=0 -d feature=false
+curl http://localhost:8080/art/add -d "title=Still Life 1" -d "medium=Colored Pencils" -d imgFull=stillLife1.png -d imgComp=stillLife1.jpg -d type=trad -d category=draw -d height=0 -d width=0 -d feature=false
 
 # Arm Anatomy
-curl http://localhost:8080/art/add -d "title=Arm Anatomy" -d medium=Pen -d imgFull=armAnatomy.png -d imgComp=armAnatomy.png -d type=trad -d category=draw -d height=0 -d width=0 -d feature=false
+curl http://localhost:8080/art/add -d "title=Arm Anatomy" -d medium=Pen -d imgFull=armAnatomy.png -d imgComp=armAnatomy.jpg -d type=trad -d category=draw -d height=0 -d width=0 -d feature=false
 
 # Doodle
 curl http://localhost:8080/art/add -d title=Doodle -d medium=Graphite -d imgFull=doodle.jpg -d imgComp=doodle.jpg -d type=trad -d category=draw -d height=0 -d width=0 -d feature=false
@@ -290,16 +290,16 @@ curl http://localhost:8080/art/add -d title=Pieces -d medium=Collage -d imgFull=
 # ================= EXTRA TEST ITEMS =================
 
 # Test Image 1 [paint]
-#curl http://localhost:8080/art/add -d "title=Test Image 1" -d medium=testPaint -d imgFull=testImg.png -d imgComp=testImg.png -d type=trad -d category=paint -d height=0 -d width=0 -d feature=false
+#curl http://localhost:8080/art/add -d "title=Test Image 1" -d medium=testPaint -d imgFull=testImg.png -d imgComp=testImg.jpg -d type=trad -d category=paint -d height=0 -d width=0 -d feature=false
 
 # Test Image 2 [draw]
-#curl http://localhost:8080/art/add -d "title=Test Image 2" -d medium=testDraw -d imgFull=testImg.png -d imgComp=testImg.png -d type=trad -d category=draw -d height=0 -d width=0 -d feature=false
+#curl http://localhost:8080/art/add -d "title=Test Image 2" -d medium=testDraw -d imgFull=testImg.png -d imgComp=testImg.jpg -d type=trad -d category=draw -d height=0 -d width=0 -d feature=false
 
 # Test Image 3 [other]
-#curl http://localhost:8080/art/add -d "title=Test Image 3" -d medium=testOther -d imgFull=testImg.png -d imgComp=testImg.png -d type=trad -d category=other -d height=0 -d width=0 -d feature=false
+#curl http://localhost:8080/art/add -d "title=Test Image 3" -d medium=testOther -d imgFull=testImg.png -d imgComp=testImg.jpg -d type=trad -d category=other -d height=0 -d width=0 -d feature=false
 
 # Test Image 4 [logo]
-#curl http://localhost:8080/art/add -d "title=Test Image 4" -d medium=testLogo -d imgFull=testImg.png -d imgComp=testImg.png -d type=digi -d category=logo -d height=0 -d width=0 -d feature=false
+#curl http://localhost:8080/art/add -d "title=Test Image 4" -d medium=testLogo -d imgFull=testImg.png -d imgComp=testImg.jpg -d type=digi -d category=logo -d height=0 -d width=0 -d feature=false
 
 # Test Image 5 [cover]
-#curl http://localhost:8080/art/add -d "title=Test Image 5" -d medium=testCover -d imgFull=testImg.png -d imgComp=testImg.png -d type=digi -d category=cover -d height=0 -d width=0 -d feature=false
+#curl http://localhost:8080/art/add -d "title=Test Image 5" -d medium=testCover -d imgFull=testImg.png -d imgComp=testImg.jpg -d type=digi -d category=cover -d height=0 -d width=0 -d feature=false
